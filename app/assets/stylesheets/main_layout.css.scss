@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+$roboto: 'Roboto';
+$print-red: #E3310D;
+$print-blue: #3EA0C0;
+$cream: #F1E4BF;
+$dark-purple: #180952;
+$grey: #D3D3D3;	
+
+body{
+	// background-image: url(asset-path("crossword.png"));
+	background-color: lighten($grey, 10%);
+	#intro{
+		margin-top: -5px;
+		height: 100%;
+		background-color: darken($print-red, 5%); 
+		h1{
+			color: lighten($cream, 10%);
+			font-weight: bold;
+			text-align:center;
+		}
+		// #header{
+		// 	padding-top: 40px;
+		// 	text-align: center;
+		// 	span{
+		// 		height: 30px;
+		// 		margin-right: 70px;
+		// 		a {
+		// 			border: 1px solid black;
+		// 		}
+		// 	}
+		// }
+	}
+}
+
