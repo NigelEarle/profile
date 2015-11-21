@@ -1,22 +1,35 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+// @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-$roboto: 'Roboto';
+
 $print-red: #E3310D;
 $print-blue: #3EA0C0;
 $cream: #F1E4BF;
 $dark-purple: #180952;
 $grey: #D3D3D3;	
 
+@font-face{
+	font-family: 'Bebas Neue';
+	src: url(BebasNeue.otf) format("truetype");
+}
+
 body{
-	// background-image: url(asset-path("crossword.png"));
 	background-color: lighten($grey, 10%);
 	#intro{
 		margin-top: -5px;
-		height: 100%;
-		background-color: darken($print-red, 5%); 
-		h1{
+		height: 90%;
+		background: 
+			linear-gradient(
+				rgba(0, 0, 0, 0.60),
+				rgba(0, 0, 0, 0.60)
+			),
+			url("http://thebitcoin.news/wp-content/uploads/2015/10/o-GAMBLING-facebook.jpg");
+		background-repeat: initial;
+			
+		h1, h2{
+			font-family: 'Bebas Neue';
 			color: lighten($cream, 10%);
-			font-weight: bold;
+			// font-weight: bold;
+			font-size: 2000%;
 			text-align:center;
 		}
 		// #header{
