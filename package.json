@@ -15,6 +15,11 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/nwre87/personal-profile#readme",
   "devDependencies": {
+    "babel-eslint": "^6.0.5",
+    "eslint": "^2.13.1",
     "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "hapi": "^13.4.1"
   }
 }
