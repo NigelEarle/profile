@@ -1,24 +1,45 @@
-const gulp = require('gulp'),
-  uglify = require('gulp-uglify'),
-  sass = require('gulp-sass');
+const gulp    = require('gulp'),
+   uglify     = require('gulp-uglify'),
+   pump       = require('pump'),
+   sass       = require('gulp-sass'),
+   nodemon    = require('gulp-nodemon'),
+   livereload = require('gulp-livereload');
 
-gulp.task('scripts', function(){
-  gulp.src('public/js/*.js')
-  .pipe(uglify())
-  .pipe(gulp.dest('dist/js'));
+gulp.task('serve', function(){
+  nodemon({
+    script: 'server.js',
+    ext: 'js'
+  })
+  .on('restart', function(){
+    console.log('Server Restarted!');
+  })
+})
+
+gulp.task('js', function(cb){
+  pump([
+      gulp.src('./src/assets/js/*.js'),
+      uglify(),
+      gulp.dest('public/js')
+    ],
+    cb
+  );
 });
 
 gulp.task('styles', function(){
-  gulp.src('public/scss/*.scss')
+  gulp.src('./src/assets/scss/*.scss')
   .pipe(sass({
     outputStyle: 'compressed'
-  }).on('error', sass.logError))
-  .pipe(gulp.dest('dist/css'));
+  })
+  .on('error', sass.logError))
+  .pipe(gulp.dest('public/css'))
+  .pipe(livereload());
 });
 
 gulp.task('watch', function(){
-  gulp.watch('public/js/*.js', ['scripts']);
-  gulp.watch('public/scss/*.scss', ['styles'])
+  livereload.listen()
+  gulp.watch('./src/assets/js/*.js', ['js']);
+  gulp.watch('./src/assets/scss/*.scss', ['styles']);
 })
 
-gulp.task('default', ['scripts', 'styles', 'watch']);
+gulp.task('default', ['js', 'styles', 'serve', 'watch']);
+
