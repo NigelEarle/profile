@@ -8,7 +8,7 @@ const gulp    = require('gulp'),
 gulp.task('serve', function(){
   nodemon({
     script: 'server.js',
-    ext: 'js'
+    ext: 'js',
   })
   .on('restart', function(){
     console.log('Server Restarted!');
@@ -36,9 +36,12 @@ gulp.task('styles', function(){
 });
 
 gulp.task('watch', function(){
-  livereload.listen()
+  livereload.listen();
   gulp.watch('./src/assets/js/*.js', ['js']);
   gulp.watch('./src/assets/scss/*.scss', ['styles']);
+  // gulp.watch('./src/templates/*.html').on('change', function(file) {
+  //   livereload.changed(file.path);
+  // });
 })
 
 gulp.task('default', ['js', 'styles', 'serve', 'watch']);
