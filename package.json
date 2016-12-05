@@ -1,0 +1,17 @@
+{
+  "name": "personal-profile",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:nwre87/personal-profile.git",
+  "author": "nwre87 <nwre87@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^1.13.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-es2015": "^6.18.0",
+    "eslint": "latest"
+  }
+}
