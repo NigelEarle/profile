@@ -23,7 +23,7 @@ const config = {
         loader: 'babel',
         exclude: [nodeModulesPath],
         query: {
-          presets: ['react'],
+          presets: ['es2015', 'react'],
         }
       },
       {
