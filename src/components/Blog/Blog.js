@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import styles from './Blog.css';
-
 import {HeaderComponent} from './components/../..';
 
 export class BlogComponent extends Component{
