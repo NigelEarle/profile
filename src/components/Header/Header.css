@@ -1,0 +1,7 @@
+.container {
+  margin: 0;
+  min-width: 100%;
+  border: solid 1px black;
+  height: 40px;
+  display: inline-block;
+}
