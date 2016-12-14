@@ -7,8 +7,8 @@ const HomeComponent = () => {
     <div>
       <HeaderComponent />
       <div className={styles.container}>
-        <h1>Nigel Earle</h1>
-        <h2>Full Stack Web Developer</h2>
+        <h1>Heading</h1>
+        <h2>Sub heading</h2>
       </div>
     </div>
   );

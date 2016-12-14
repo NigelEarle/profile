@@ -1,7 +1,17 @@
 .container {
   margin: 0;
   min-width: 100%;
-  border: solid 1px black;
+  background-color: #112641;
   height: 80px;
   display: inline-block;
+}
+
+.link {
+  text-decoration: none;
+  color: #CDD7D6;
+}
+
+.homeLink {
+  composes: link;
+  margin: 20px;
 }
