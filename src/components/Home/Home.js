@@ -7,8 +7,10 @@ const HomeComponent = () => {
     <div>
       <HeaderComponent />
       <div className={styles.container}>
-        <h1>Heading</h1>
-        <h2>Sub heading</h2>
+        <div className={styles.intro}>
+          <h1 className={styles.heading}>Heading</h1>
+          <h2 className={styles.heading}>Sub heading</h2>
+        </div>
       </div>
     </div>
   );

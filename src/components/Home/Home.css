@@ -1,3 +1,11 @@
 .container {
-  background-color: lightgrey;
+  background-color: #EAEAEA;
+  min-width: 100%;
+  min-height: 525px;
+}
+
+.intro {
+  color: #112641;
+  text-align: center;
+  padding-top: 175px;
 }

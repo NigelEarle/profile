@@ -4,14 +4,15 @@ import styles from './Header.css';
 
 export class HeaderComponent extends Component{
   handleMenu() {
+    // toggle off-screen menu on small screens
   }
 
   render () {
     return(
       <div className={styles.container}>
-        <Link to={'/'} className={styles.homeLink}>Hi, I'm Nigel</Link>
+        <Link to={'/'} className={styles.link}>Home</Link>
         <div className={styles.linkContainer}>
-          <Link to={'/work'} className={styles.link}>Portfolio</Link>
+          <Link to={'/work'} className={styles.link}>Work</Link>
           <Link to={'/blog'} className={styles.link}>Blog</Link>
           <Link to={'/contact'} className={styles.link}>Contact</Link>
         </div>

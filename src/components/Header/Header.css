@@ -1,21 +1,22 @@
 .container {
   margin: 0;
   min-width: 100%;
-  background-color: #112641;
+  background-color: #EAEAEA;
   height: 60px;
   padding-top: 30px;
-
-}
-
-.homeLink {
-  font-size: 19px;
-  text-decoration: none;
-  color: #CDD7D6;
-  margin-left: 60px;
 }
 
 .link {
-  composes: homeLink;
+  font-size: 19px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #112641;
+  margin-left: 60px;
+  transition: .5s;
+}
+
+.link:hover {
+  color: #F67164;
 }
 
 .linkContainer {
