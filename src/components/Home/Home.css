@@ -8,5 +8,11 @@
   width:40%;
   color: #112641;
   text-align: center;
-  padding: 175px 0 0 30%;
+  padding: 70px 0 0 30%;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
 }

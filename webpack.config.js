@@ -29,6 +29,10 @@ const config = {
       {
         test: /\.css$/,
         loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
+      },
+      {
+        test: /\.jpe?g$|\.png$|\.svg$/i,
+        loader: 'url-loader?limit=10000',
       }
     ],
   },
