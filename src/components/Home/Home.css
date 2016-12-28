@@ -16,3 +16,8 @@
   width: 150px;
   height: 150px;
 }
+
+.description {
+  font-weight: 400;
+  color: #112641;
+}
