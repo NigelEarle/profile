@@ -13,7 +13,7 @@ const HomeComponent = () => {
           <h1 className={styles.heading}>Nigel Earle</h1>
           <h2 className={styles.heading}>Software Developer</h2>
           <p className={styles.description}>
-            I am a JavaScript Software Developer based in Kailua, Hawaii. I make web applications using React, Redux and Node.js. Also, some experience with Ruby and Python.
+            I am a JavaScript Software Developer based in Kailua, Hawaii. I make web applications using React and Node.js. I also enjoy working with Ruby and Python.
           </p>
         </div>
       </div>

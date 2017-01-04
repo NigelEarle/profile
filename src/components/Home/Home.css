@@ -1,14 +1,18 @@
 .container {
-  background-color: #EAEAEA;
+  background-color: #080E49;
   min-width: 100%;
   height: 525px;
 }
 
 .intro {
   width:40%;
-  color: #112641;
+  color: white;
   text-align: center;
   padding: 70px 0 0 30%;
+}
+
+.heading {
+  font-weight: 600; 
 }
 
 .profileImage {
@@ -18,6 +22,5 @@
 }
 
 .description {
-  font-weight: 400;
-  color: #112641;
+  font-weight: 500;
 }
