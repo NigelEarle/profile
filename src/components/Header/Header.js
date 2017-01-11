@@ -3,7 +3,8 @@ import {Link} from 'react-router';
 import styles from './Header.css';
 
 export class HeaderComponent extends Component{
-  handleMenu() {
+  handleMenu(e) {
+    e.preventDefault();
     // toggle off-screen menu on small screens
   }
 
