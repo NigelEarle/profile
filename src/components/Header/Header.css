@@ -1,7 +1,6 @@
 .container {
   margin: 0;
   min-width: 100%;
-  background-color: white;
   height: 60px;
   padding-top: 30px;
 }
@@ -14,6 +13,11 @@
   color: #000032;
   margin-left: 60px;
   transition: .3s;
+}
+
+.homeLink {
+  composes: link;
+  margin-left: 5%;
 }
 
 .link:hover {
@@ -30,12 +34,12 @@
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .hamburger {
     margin: 0;
     display: block;
     float: right;
-    margin-right: 40px;
+    margin-right: 5%;
   }
   
   .bar {
@@ -47,10 +51,6 @@
 
   .bar:first-child {
     margin-top: 0;
-  }
-
-  .homeLink {
-    display: none;
   }
 
   .linkContainer {

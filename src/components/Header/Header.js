@@ -11,7 +11,7 @@ export class HeaderComponent extends Component{
   render () {
     return(
       <div className={styles.container}>
-        <Link to={'/'} className={styles.link}>Home</Link>
+        <Link to={'/'} className={styles.homeLink}>Home</Link>
         <div className={styles.linkContainer}>
           <Link to={'/work'} className={styles.link}>Work</Link>
           <Link to={'/blog'} className={styles.link}>Blog</Link>

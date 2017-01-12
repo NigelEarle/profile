@@ -1,12 +1,24 @@
 body {
   margin: 0;
-  background-color: white;
+  background-color: #F9F9F9;
   font-family: 'Montserrat', Helvetica, Sans-Serif;
   font-weight: 100;
-  font-size: 16px;
+  font-size: large;
   text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 630px) {
+  body {
+    font-size: small;
+  }
 }

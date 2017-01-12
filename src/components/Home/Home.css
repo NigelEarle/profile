@@ -1,7 +1,5 @@
 .container {
-  background-color: white;
   min-width: 100%;
-  height: 525px;
 }
 
 .intro {
@@ -13,6 +11,13 @@
 
 .heading {
   font-weight: 600;
+  line-height: 45px;
+}
+
+.subHeading {
+  font-weight: 500;
+  letter-spacing: .5px;
+  margin-bottom: 15px;
 }
 
 .profileImage {
@@ -22,5 +27,18 @@
 }
 
 .description {
-  font-weight: 500;
+ margin: 0; 
+ text-align: left;
+}
+
+@media (max-width: 630px) {
+  .intro {
+    width: auto;
+    padding: 100px 20px 0;
+  }
+
+  .profileImage {
+    width: 125px;
+    height: 125px;
+  }
 }

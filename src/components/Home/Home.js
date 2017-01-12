@@ -11,9 +11,9 @@ const HomeComponent = () => {
         <div className={styles.intro}>
           <img src={DEFAULT_PERSON} alt="default person" className={styles.profileImage}/>
           <h1 className={styles.heading}>Nigel Earle</h1>
-          <h2 className={styles.heading}>Software Developer</h2>
+          <h3 className={styles.subHeading}>Software Developer</h3>
           <p className={styles.description}>
-            I am a JavaScript Software Developer based in Kailua, Hawaii. I make web applications using React and Node.js. I also enjoy working with Ruby and Python.
+            JavaScript Software Developer based in Kailua, Hawaii. I enjoy making web applications using React and Node.js. //Ruby and Python
           </p>
         </div>
       </div>
