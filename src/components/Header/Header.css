@@ -7,7 +7,7 @@
 
 
 .link {
-  font-size: 19px;
+  /*font-size: 19px;*/
   font-weight: 500;
   text-decoration: none;
   color: #000032;
@@ -34,7 +34,7 @@
   display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 460px) {
   .hamburger {
     margin: 0;
     display: block;
@@ -43,10 +43,10 @@
   }
   
   .bar {
-    width: 35px;
-    height: 5px;
+    width: 26px;
+    height: 4px;
     background-color: #000032;
-    margin: 6px 0;
+    margin: 4px 0;
   }
 
   .bar:first-child {
