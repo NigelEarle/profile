@@ -8,14 +8,7 @@ const HomeComponent = () => {
     <div>
       <HeaderComponent />
       <div className={styles.container}>
-        <div className={styles.intro}>
-          <img src={DEFAULT_PERSON} alt="default person" className={styles.profileImage}/>
-          <h1 className={styles.heading}>Nigel Earle</h1>
-          <h3 className={styles.subHeading}>Software Developer</h3>
-          <p className={styles.description}>
-            Hey, I'm a JavaScript Software Developer based in Kailua, Hawaii. I enjoy making web applications using React, Node.js.
-          </p>
-        </div>
+        Hello
       </div>
     </div>
   );
