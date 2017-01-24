@@ -6,11 +6,11 @@
 }
 
 .link {
+  font-size: 1.4rem;
   font-weight: 300;
   text-decoration: none;
   color: #000032;
-  margin-left: 60px;
-  transition: .3s;
+  margin-left: 3.75em;
 }
 
 .homeLink {
@@ -28,7 +28,7 @@
   display: none;
 }
 
-@media (max-width: 460px) {
+@media (max-width: 580px) {
   .hamburger {
     margin: 0;
     display: block;
