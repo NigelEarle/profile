@@ -1,11 +1,12 @@
 .container {
+  max-width: 900px;
   min-height: 100%;
-  margin-top: 130px;
-  padding-left: 10%;
-  /*padding: .5em;*/
+  padding: 0 5% 0;
+  margin: 0 auto;
 }
 
 .intro {
+  margin-top: 100px;
   color: #000032;
 }
 
@@ -20,7 +21,6 @@
 }
 
 .description {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.2;
-
 }
