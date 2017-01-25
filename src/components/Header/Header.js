@@ -1,14 +1,32 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import classNames from 'classnames/bind';
 import styles from './Header.css';
 
+const cx = classNames.bind(styles);
+
 export class HeaderComponent extends Component{
-  handleMenu(e) {
+  constructor(props) {
+    super(props);
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.state = {
+      open: false,
+    }
+  }
+  toggleMenu(e) {
     e.preventDefault();
-    // toggle off-screen menu on small screens
+    this.setState({open: !this.state.open});
   }
 
   render () {
+    const {open} = this.state;
+    const classes = cx(
+      'bar',
+      {
+        open,
+      }
+    );
+
     return(
       <div className={styles.container}>
         <Link to={'/'} className={styles.homeLink}>Home</Link>
@@ -18,10 +36,11 @@ export class HeaderComponent extends Component{
           <Link to={'/blog'} className={styles.link}>Blog</Link>
         </div>
 
-        <div className={styles.hamburger} onClick={this.handleMenu.bind(this)}>
-          <div className={styles.bar}></div>
-          <div className={styles.bar}></div>
-          <div className={styles.bar}></div>
+
+        <div className={styles.menu} onClick={this.toggleMenu}>
+          <span className={classes}></span>
+          <span className={classes}></span>
+          <span className={classes}></span>
         </div>
       </div>
     );
