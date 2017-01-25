@@ -8,6 +8,7 @@ import {
   GITHUB_LOGO,
   LINKEDIN_LOGO,
   TWITTER_LOGO,
+  STACKOVERFLOW_LOGO,
 } from './../../assets';
 
 const HomeComponent = () => {
@@ -23,13 +24,33 @@ const HomeComponent = () => {
             As well as, other server side languages such as Python and Ruby. With some experience and strong interest in DevOps.
           </p>
         </div>
-        <div className={styles.contact}>
-          <a href="https://twitter.com/NigelEarle">
-          <img src="" alt=""/>
-          Twitter
-          </a> /
-          <a href="https://github.com/NigelEarle"></a>
-        </div>
+        <ul className={styles.contact}>
+          <li>
+            <a href="#" className={styles.socialLink}>
+              <img src={ENVELOPE_LOGO} alt="envelope" className={styles.logo}/>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/nigelearle" className={styles.socialLink}>
+              <img src={LINKEDIN_LOGO} alt="github logo" className={styles.logo}/>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/NigelEarle" className={styles.socialLink}>
+              <img src={GITHUB_LOGO} alt="github logo" className={styles.logo}/>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/NigelEarle" className={styles.socialLink}>
+              <img src={TWITTER_LOGO} alt="twitter logo" className={styles.logo}/>
+            </a>
+          </li>
+          <li>
+            <a href="http://stackoverflow.com/users/3996221/nigel-earle" className={styles.socialLink}>
+              <img src={STACKOVERFLOW_LOGO} alt="github logo" className={styles.logo}/>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );

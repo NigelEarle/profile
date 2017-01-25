@@ -24,3 +24,27 @@
   font-size: 1.5rem;
   line-height: 1.2;
 }
+
+.contact {
+  margin-top: 60px;
+  padding: 0;
+}
+
+.contact li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 1.9rem;
+}
+
+.logo {
+  width: 30px;
+  height: 26px;
+}
+
+@media (max-width: 900px) {
+
+  .logo {
+    width: 35px;
+    height: 31px;
+  }
+}
