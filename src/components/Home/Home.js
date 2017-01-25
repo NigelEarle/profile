@@ -22,7 +22,7 @@ const HomeComponent = () => {
           <hr/>
           <p className={styles.description}>
             Software Developer specializing in JavaScript & Node.js. 
-            As well as, other server side languages such as Python and Ruby. With some experience and strong interest in DevOps.
+            As well as, other server side languages such as Python and Ruby. With some experience and a strong interest in DevOps.
           </p>
         </div>
         <ul className={styles.contact}>

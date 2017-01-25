@@ -1,19 +1,19 @@
 import React from 'react';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';
 
 import {
   HomeComponent,
   WorkComponent,
-  ContactComponent,
+  AboutComponent,
   BlogComponent,
 } from '../components';
 
 const ProfileRouter = () => (
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={HomeComponent}></Route>
     <Route path="/work" component={WorkComponent}></Route>
     <Route path="/blog" component={BlogComponent}></Route>
-    <Route path="/contact" component={ContactComponent}></Route>
+    <Route path="/about" component={AboutComponent}></Route>
   </Router>
 );
 

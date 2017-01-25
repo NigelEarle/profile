@@ -25,7 +25,7 @@ module.exports = () => {
     noInfo: true,
     stats: {
       colors: true,
-    }
+    },
   });
 
   bundler.listen(8080, 'localhost', () => { console.log('Building project please wait...') })
