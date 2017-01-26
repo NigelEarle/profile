@@ -41,6 +41,13 @@ export class HeaderComponent extends Component{
           <span className={classes}></span>
           <span className={classes}></span>
           <span className={classes}></span>
+
+          <ul className={styles.menuLinks}>
+            <li><Link to={'/'} className={styles.menuLink}>Home</Link></li>
+            <li><Link to={'/about'} className={styles.menuLink}>About</Link></li>
+            <li><Link to={'/work'} className={styles.menuLink}>Work</Link></li>
+            <li><Link to={'/blog'} className={styles.menuLink}>Blog</Link></li>
+          </ul>
         </div>
       </div>
     );
