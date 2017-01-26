@@ -43,10 +43,20 @@ export class HeaderComponent extends Component{
           <span className={classes}></span>
 
           <ul className={styles.menuLinks}>
-            <li><Link to={'/'} className={styles.menuLink}>Home</Link></li>
-            <li><Link to={'/about'} className={styles.menuLink}>About</Link></li>
-            <li><Link to={'/work'} className={styles.menuLink}>Work</Link></li>
-            <li><Link to={'/blog'} className={styles.menuLink}>Blog</Link></li>
+            <li className={styles.routeLink}><Link to={'/'} className={styles.menuLink}>Home</Link></li>
+            <li className={styles.routeLink}><Link to={'/about'} className={styles.menuLink}>About</Link></li>
+            <li className={styles.routeLink}><Link to={'/work'} className={styles.menuLink}>Work</Link></li>
+            <li className={styles.routeLink}><Link to={'/blog'} className={styles.menuLink}>Blog</Link></li>
+
+            <li>
+              <ul className={styles.socialLinks}>
+                <li><a href="mailto:nigel@earle.io" className={styles.socialLink}>Email</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/nigelearle" className={styles.socialLink}>LinkedIn</a></li>
+                <li><a target="_blank" href="https://github.com/NigelEarle" className={styles.socialLink}>Github</a></li>
+                <li><a target="_blank" href="https://twitter.com/NigelEarle" className={styles.socialLink}>Twitter</a></li>
+                <li><a target="_blank" href="http://stackoverflow.com/users/3996221/nigel-earle" className={styles.socialLink}>Stack Overflow</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>

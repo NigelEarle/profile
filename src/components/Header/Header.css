@@ -87,8 +87,8 @@
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   }
 
-  .menuLinks li {
-    padding: 17px 0;
+  .routeLink {
+    padding: 10px 0;
     font-size: 22px;
   }
 
@@ -103,7 +103,22 @@
   .menuLink:visted {
     color: #000032;
   }
+
+  .socialLinks {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 120px;
+  }
+
+  .socialLink {
+    composes: menuLink;
+    padding-bottom: 8px;
+  }
   
+  .socialLink:visited {
+    color: #000032;
+  }
+
   .open ~ ul {
     transform: scale(1.0, 1.0);
     opacity: 1;
