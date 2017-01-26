@@ -22,9 +22,7 @@ export class HeaderComponent extends Component{
     const {open} = this.state;
     const classes = cx(
       'bar',
-      {
-        open,
-      }
+      {open}
     );
 
     return(
@@ -51,10 +49,10 @@ export class HeaderComponent extends Component{
             <li>
               <ul className={styles.socialLinks}>
                 <li><a href="mailto:nigel@earle.io" className={styles.socialLink}>Email</a></li>
-                <li><a target="_blank" href="https://www.linkedin.com/in/nigelearle" className={styles.socialLink}>LinkedIn</a></li>
-                <li><a target="_blank" href="https://github.com/NigelEarle" className={styles.socialLink}>Github</a></li>
-                <li><a target="_blank" href="https://twitter.com/NigelEarle" className={styles.socialLink}>Twitter</a></li>
-                <li><a target="_blank" href="http://stackoverflow.com/users/3996221/nigel-earle" className={styles.socialLink}>Stack Overflow</a></li>
+                <li><a href="https://www.linkedin.com/in/nigelearle" className={styles.socialLink}>LinkedIn</a></li>
+                <li><a href="https://github.com/NigelEarle" className={styles.socialLink}>Github</a></li>
+                <li><a href="https://twitter.com/NigelEarle" className={styles.socialLink}>Twitter</a></li>
+                <li><a href="http://stackoverflow.com/users/3996221/nigel-earle" className={styles.socialLink}>Stack Overflow</a></li>
               </ul>
             </li>
           </ul>
