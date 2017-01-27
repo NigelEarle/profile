@@ -17,6 +17,9 @@ const publicPath = path.resolve(__dirname, 'public');
 const app = express();
 
 mongoose.connect(DB_URL);
+
+app.set('views', path.join(__dirname, 'server/templates'));
+app.set('view engine', 'hbs');
 app.use(express.static(publicPath));
 app.use(bodyParser.urlencoded({ extended: false }))
 

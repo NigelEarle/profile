@@ -4,8 +4,7 @@ const Blog = require('./../models/blogs');
 
 router.route('/blog')
   .get((req, res) => {
-    console.log('hello')
-    Blog.find((err, blogs) => {
+    Blog.find((error, blogs) => {
       if(error) {
         res.send(error).status(500);
       } else {
@@ -14,11 +13,12 @@ router.route('/blog')
     })
   })
   .post((req, res) => {
+    const createdAt = new Date();
+    const updatedAt = new Date();
+
     const {
       coverImage,
       description,
-      createdAt,
-      updatedAt,
     } = req.body;
 
     Blog.create({
@@ -35,6 +35,9 @@ router.route('/blog')
     });
   })
 
+router.get('/blog/new', (req, res) => {
+  res.render('new');
+});
 
 router.route('/blog/:id')
   .get((req, res) => {
@@ -45,6 +48,7 @@ router.route('/blog/:id')
       if (err) {
         res.send(err).status(500);
       } else {
+        // send template with single blog
         res.send(blog);
       }
     });
