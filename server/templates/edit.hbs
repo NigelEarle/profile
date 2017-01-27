@@ -1,0 +1,14 @@
+<div>
+  <h1>Edit Blog Post ID: {{id}}</h1>
+  <p>{{blog.description}}</p>
+  <form action="/api/blog/{{id}}" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="file" name="coverImage" value="{{blog.coverImage}}">
+    <input type="text" name="description" value="{{blog.description}}">
+    <input type="submit">
+  </form>
+  <form action="/api/blog/{{id}}" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Delete Blog Post</button>
+  </form>
+</div>

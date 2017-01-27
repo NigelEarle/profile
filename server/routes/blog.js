@@ -8,7 +8,7 @@ router.route('/blog')
       if(error) {
         res.send(error).status(500);
       } else {
-        res.send(blogs)
+        res.render('index', {blogs});
       }
     })
   })
@@ -41,6 +41,7 @@ router.get('/blog/new', (req, res) => {
 
 router.route('/blog/:id')
   .get((req, res) => {
+    const {id} = req.params;
     Blog.findOne({
       '_id': req.params.id,
     },
@@ -48,8 +49,7 @@ router.route('/blog/:id')
       if (err) {
         res.send(err).status(500);
       } else {
-        // send template with single blog
-        res.send(blog);
+        res.render('edit', {id, blog});
       }
     });
   })
@@ -77,7 +77,7 @@ router.route('/blog/:id')
       if (err) {
         res.send(err).status(500);
       } else {
-        res.send(blog)
+        res.redirect('/api/blog');
       }
     });
   })

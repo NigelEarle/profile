@@ -1,0 +1,20 @@
+<div>
+  <h1>Full Blog List</h1>
+  <ul>
+    <h3>Click to Edit Blog</h3>
+    <button>
+      <a href="/api/blog/new">Create New Blog Post</a>
+    </button>
+    {{#each blogs}}
+      <li>
+        <a href="/api/blog/{{this._id}}">
+          {{#if this.description}}
+            {{this.description}}
+          {{else}}
+            No Description
+          {{/if}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
