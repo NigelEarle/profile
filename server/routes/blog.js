@@ -4,9 +4,14 @@ const Blog = require('./../models/blogs');
 
 router.route('/blog')
   .get((req, res) => {
-    Blog.find()
-
-    // Query DB for all blog posts
+    console.log('hello')
+    Blog.find((err, blogs) => {
+      if(error) {
+        res.send(error).status(500);
+      } else {
+        res.send(blogs)
+      }
+    })
   })
   .post((req, res) => {
     const {
@@ -22,10 +27,11 @@ router.route('/blog')
       createdAt,
       updatedAt,
     }, error => {
-      if (!error) {
-        res.send('Post successful!');
+      if (error) {
+        res.send(error).status(500);
+      } else {
+        res.send();
       }
-      res.send(error);
     });
   })
   .put((req, res) => {
