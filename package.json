@@ -6,12 +6,15 @@
     "start": "nodemon server"
   },
   "repository": "git@bitbucket.org:nwre87/personal-profile.git",
-  "author": "nwre87 <nwre87@gmail.com>",
+  "author": "nwre87 <nigel@earle.io>",
   "license": "MIT",
   "dependencies": {
     "babel-preset-react": "^6.16.0",
+    "body-parser": "^1.16.0",
     "classnames": "^2.2.5",
     "express": "^4.14.0",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.7.8",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0",
