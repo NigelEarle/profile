@@ -17,11 +17,13 @@ router.route('/blog')
     const updatedAt = new Date();
 
     const {
+      title,
       coverImage,
       description,
     } = req.body;
 
     Blog.create({
+      title,
       coverImage,
       description,
       createdAt,
@@ -56,6 +58,7 @@ router.route('/blog/:id')
   .put((req, res) => {
     const updatedAt = new Date();
     const {
+      title,
       coverImage,
       description,
       createdAt,
@@ -65,6 +68,7 @@ router.route('/blog/:id')
       '_id': req.params.id,
     },
     {
+      title,
       coverImage,
       description,
       createdAt,

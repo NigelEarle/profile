@@ -8,10 +8,10 @@
     {{#each blogs}}
       <li>
         <a href="/api/blog/{{this._id}}">
-          {{#if this.description}}
-            {{this.description}}
+          {{#if this.title}}
+            {{this.title}}
           {{else}}
-            No Description
+            No Title
           {{/if}}
         </a>
       </li>

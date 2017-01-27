@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const WorkSchema = new mongoose.Schema({
+  title: String,
   url: String,
   coverImage: String, 
   description: String,

@@ -1,8 +1,9 @@
 <div>
   <h1>Edit Blog Post ID: {{id}}</h1>
-  <p>{{blog.description}}</p>
+  <p>{{blog.title}}</p>
   <form action="/api/blog/{{id}}" method="POST">
     <input type="hidden" name="_method" value="PUT">
+    <input type="text" name="title" value="{{blog.title}}">
     <input type="file" name="coverImage" value="{{blog.coverImage}}">
     <input type="text" name="description" value="{{blog.description}}">
     <input type="submit">
