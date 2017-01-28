@@ -5,13 +5,9 @@ const uploadToS3 = require('./../helpers/images');
 
 router.route('/blog')
   .get((req, res) => {
-    Blog.find((error, blogs) => {
-      if(error) {
-        res.send(error).status(500);
-      } else {
-        res.render('index', {blogs});
-      }
-    })
+    Blog.find()
+    .then(blogs =>  res.render('index', {blogs}))
+    .catch(err => res.send(error).status(500))
   })
   .post((req, res) => {
     const {
@@ -45,18 +41,12 @@ router.get('/blog/new', (req, res) => {
 router.route('/blog/:id')
   .get((req, res) => {
     const {id} = req.params;
-    Blog.findOne({
-      '_id': req.params.id,
-    },
-    (err, blog) => {
-      if (err) {
-        res.send(err).status(500);
-      } else {
-        res.render('edit', {id, blog});
-      }
-    });
+    Blog.findOne({'_id': id})
+    .then(blog => res.render('edit', {id, blog}))
+    .catch(err => res.send(err).status(500))
   })
   .put((req, res) => {
+    const {id} = req.params;
     const updatedAt = new Date();
     const {
       title,
@@ -65,37 +55,27 @@ router.route('/blog/:id')
       createdAt,
     } = req.body;
 
-    Blog.findOneAndUpdate({
-      '_id': req.params.id,
-    },
-    {
+    const payload = {
       title,
       coverImage,
       description,
       createdAt,
-      updatedAt,
-    },
-    {
-      new: true,
-    },
-    (err, blog) => {
-      if (err) {
-        res.send(err).status(500);
-      } else {
-        res.redirect('/api/blog');
-      }
-    });
+      updatedAt
+    };
+
+    Blog.findOneAndUpdate(
+      {'_id': id},
+      payload,
+      {new: true}
+    )
+    .then(blog => res.redirect('/api/blog'))
+    .catch(err => res.send(err).status(500))
   })
   .delete((req, res) => {
-    Blog.findOneAndRemove({
-      '_id': req.params.id,
-    }, err => {
-      if(err) {
-        res.send(err).status(500)
-      } else {
-        res.send(`Blog id: ${req.params.id} successfully deleted!`);
-      }
-    });
+    const {id} = req.params;
+    Blog.findOneAndRemove({'_id': id})
+    .then(() => res.send(`Blog id: ${req.params.id} successfully deleted!`))
+    .catch(err => res.send(err).status(500))
   });
 
 module.exports = router;
