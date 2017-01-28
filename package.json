@@ -9,6 +9,7 @@
   "author": "nwre87 <nigel@earle.io>",
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.9.0",
     "babel-preset-react": "^6.16.0",
     "body-parser": "^1.16.0",
     "classnames": "^2.2.5",

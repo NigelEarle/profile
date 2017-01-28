@@ -1,9 +1,41 @@
 <div>
   <h1>NEW BLOG POST</h1>
-  <form action="/api/blog" method="POST">
-    <input type="text" name="title" placeholder="Title">
-    <input type="file" name="coverImage">
-    <input type="text" name="description" placeholder="Description" />
-    <input type="submit">
-  </form>
+  <input type="text" id="title" name="title" placeholder="Title">
+  <input type="file" id="coverImage" name="coverImage" value="">
+  <input type="text" id="description" name="description" placeholder="Description" />
+  <button type="submit" onclick="sendBlog()">Submit</button>
 </div>
+<script>
+  function sendBlog(){
+    const title = document.getElementById('title').value;
+    const coverImage = document.getElementById('coverImage').files[0];
+    const description = document.getElementById('description').value;
+    
+    const reader = new FileReader();
+    let payload = {
+      title,
+      description,
+    }
+
+    reader.addEventListener('load', () => {
+      payload.coverImage = reader.result;
+      makeRequest(payload);
+    }, false)
+
+    if(coverImage) {
+      reader.readAsDataURL(coverImage);
+    }
+  }
+
+  function makeRequest(payload){
+    const URL = '/api/blog';
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', URL);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onreadystatechange = () => {
+      console.log('RESPONSE', xhr.responseText);
+    }
+    xhr.send(JSON.stringify(payload));
+  }
+
+</script>

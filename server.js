@@ -6,7 +6,9 @@ const proxy = httpProxy.createProxyServer();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const AWS = require('aws-sdk');
 
+const AWSconfig = require('./server/config/aws.json'); // adjust for production
 const blog = require('./server/routes/blog');
 const work = require('./server/routes/work');
 
@@ -19,10 +21,17 @@ const app = express();
 
 mongoose.connect(DB_URL);
 
+const credentials = {
+  accessKeyId: AWSconfig.AWSAccessKeyId,
+  secretAccessKey: AWSconfig.AWSSecretKey,
+};
+AWS.config.update(credentials);
+
 app.set('views', path.join(__dirname, 'server/templates'));
 app.set('view engine', 'hbs');
 app.use(express.static(publicPath));
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
 
 app.use(methodOverride(function (req, res) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
