@@ -1,7 +1,6 @@
 const express = require('Express');
 const router = express.Router();
 const Blog = require('./../models/blogs');
-
 const uploadToS3 = require('./../helpers/images');
 
 router.route('/blog')
@@ -20,25 +19,23 @@ router.route('/blog')
       coverImage,
       description,
     } = req.body;
-
     const createdAt = new Date();
     const updatedAt = new Date();
 
-    uploadToS3(coverImage, (imageURL) => {
-      Blog.create({
+    uploadToS3(coverImage)
+    .then(coverImage => {
+      const payload = {
         title,
-        imageURL,
+        coverImage,
         description,
         createdAt,
         updatedAt,
-      }, error => {
-        if (error) {
-          res.send(error).status(500);
-        } else {
-          res.send('Blog post successful!');
-        }
-      });
-    });
+      }
+      Blog.create(payload) 
+      .then(() => res.send('Blog post successful!'))
+      .catch(err => res.send(error).status(500))
+    })
+    .catch(err => res.send(err))
   });
 
 router.get('/blog/new', (req, res) => {

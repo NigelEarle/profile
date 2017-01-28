@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const AWS = require('aws-sdk');
+const Promise = require('bluebird');
 
 const AWSconfig = require('./server/config/aws.json'); // adjust for production
 const blog = require('./server/routes/blog');
@@ -18,7 +19,7 @@ const PORT = isProduction ? process.env.PORT : 3000;
 const publicPath = path.resolve(__dirname, 'public');
 
 const app = express();
-
+mongoose.Promise = Promise;
 mongoose.connect(DB_URL);
 
 const credentials = {
