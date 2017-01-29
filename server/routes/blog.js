@@ -20,7 +20,7 @@ router.route('/blog')
 
     uploadToS3(coverImage)
     .then(coverImage => {
-      const payload = {
+      let payload = {
         title,
         coverImage,
         description,
@@ -48,6 +48,8 @@ router.route('/blog/:id')
   .put((req, res) => {
     const {id} = req.params;
     const updatedAt = new Date();
+    const expression = new RegExp('https:\/\/personal-profile.s3');
+
     const {
       title,
       coverImage,
@@ -55,21 +57,37 @@ router.route('/blog/:id')
       createdAt,
     } = req.body;
 
-    const payload = {
+    let payload = {
       title,
-      coverImage,
       description,
+      coverImage,
       createdAt,
-      updatedAt
+      updatedAt,
     };
 
-    Blog.findOneAndUpdate(
-      {'_id': id},
-      payload,
-      {new: true}
-    )
-    .then(blog => res.redirect('/api/blog'))
-    .catch(err => res.send(err).status(500))
+    if(coverImage.match(expression)){
+      Blog.findOneAndUpdate(
+        {'_id': id},
+        payload,
+        {new: true}
+      )
+      .then(blog => res.send('I think it worked'))
+      .catch(err => res.send(err).status(500))
+    } else {
+      uploadToS3(coverImage)
+      .then(coverImage => {
+        payload.coverImage = coverImage;
+        Blog.findOneAndUpdate(
+          {'_id': id},
+          payload,
+          {new: true}
+        )
+        .then(blog => res.send('I think it worked'))
+        .catch(err => res.send(err).status(500))
+      })
+      .catch(err => res.send(err).status(500))
+    }
+
   })
   .delete((req, res) => {
     const {id} = req.params;

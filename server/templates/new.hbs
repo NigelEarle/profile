@@ -7,6 +7,7 @@
 </div>
 <script>
   function sendBlog(){
+    // disable submit when clicked
     const title = document.getElementById('title').value;
     const coverImage = document.getElementById('coverImage').files[0];
     const description = document.getElementById('description').value;
@@ -33,6 +34,7 @@
     xhr.open('POST', URL);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.onreadystatechange = () => {
+      // send to new page or display response text;
       console.log('RESPONSE', xhr.responseText);
     }
     xhr.send(JSON.stringify(payload));

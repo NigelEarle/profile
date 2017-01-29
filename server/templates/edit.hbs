@@ -1,15 +1,58 @@
 <div>
   <h1>Edit Blog Post ID: {{id}}</h1>
   <p>{{blog.title}}</p>
-  <form action="/api/blog/{{id}}" method="POST">
-    <input type="hidden" name="_method" value="PUT">
-    <input type="text" name="title" value="{{blog.title}}">
-    <input type="file" name="coverImage" value="{{blog.coverImage}}">
-    <input type="text" name="description" value="{{blog.description}}">
-    <input type="submit">
-  </form>
+  <div>
+    <input type="text" id="title" name="title" value="{{blog.title}}">
+    <input type="file" id="coverImage" name="coverImage" value="{{blog.coverImage}}">
+    <input type="text" id="description" name="description" value="{{blog.description}}">
+    <button type="submit" onclick="updateBlog('{{id}}', '{{blog.coverImage}}')">Submit</button>
+  </div>
   <form action="/api/blog/{{id}}" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <button type="submit">Delete Blog Post</button>
   </form>
 </div>
+
+<script>
+  function updateBlog(id, originalImage){
+    // disable submit when clicked
+    // send og createdAt
+    const title = document.getElementById('title').value;
+    const newCoverImage = document.getElementById('coverImage').files[0];
+    const description = document.getElementById('description').value;
+
+    let payload = {
+      title,
+      description,
+    }
+
+    if(!newCoverImage){
+      payload.coverImage = originalImage;
+      makeRequest(payload, id);
+    } else {
+      const reader = new FileReader();
+
+      reader.addEventListener('load', () => {
+        payload.coverImage = reader.result;
+        makeRequest(payload, id);
+      }, false)
+
+      if(coverImage) {
+        reader.readAsDataURL(newCoverImage);
+      }
+    }
+  }
+
+  function makeRequest(payload, id){
+    const URL = `/api/blog/${id}`;
+    const xhr = new XMLHttpRequest();
+    xhr.open('PUT', URL);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onreadystatechange = () => {
+      // send to new page or display response text;
+      console.log('RESPONSE', xhr.responseText);
+    }
+    xhr.send(JSON.stringify(payload));
+  }
+
+</script>
