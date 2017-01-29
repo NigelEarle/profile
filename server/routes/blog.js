@@ -28,7 +28,7 @@ router.route('/blog')
         updatedAt,
       }
       Blog.create(payload) 
-      .then(() => res.send('Blog post successful!'))
+      .then(() => res.send('Blog post successful!').status(200))
       .catch(err => res.send(error).status(500))
     })
     .catch(err => res.send(err))
@@ -42,7 +42,7 @@ router.route('/blog/:id')
   .get((req, res) => {
     const {id} = req.params;
     Blog.findOne({'_id': id})
-    .then(blog => res.render('edit', {id, blog}))
+    .then(blog => res.render('edit', {blog}))
     .catch(err => res.send(err).status(500))
   })
   .put((req, res) => {
@@ -71,7 +71,7 @@ router.route('/blog/:id')
         payload,
         {new: true}
       )
-      .then(blog => res.send('I think it worked'))
+      .then(blog => res.send('Blog update successful!').status(200))
       .catch(err => res.send(err).status(500))
     } else {
       uploadToS3(coverImage)
@@ -82,7 +82,7 @@ router.route('/blog/:id')
           payload,
           {new: true}
         )
-        .then(blog => res.send('I think it worked'))
+        .then(blog => res.send('Blog update successful!').status(200))
         .catch(err => res.send(err).status(500))
       })
       .catch(err => res.send(err).status(500))

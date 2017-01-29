@@ -3,7 +3,7 @@
   <input type="text" id="title" name="title" placeholder="Title">
   <input type="file" id="coverImage" name="coverImage" value="">
   <input type="text" id="description" name="description" placeholder="Description" />
-  <button type="submit" onclick="sendBlog()">Submit</button>
+  <button type="submit" id="submit" onclick="sendBlog()">Submit</button>
 </div>
 <script>
   function sendBlog(){
@@ -11,6 +11,8 @@
     const title = document.getElementById('title').value;
     const coverImage = document.getElementById('coverImage').files[0];
     const description = document.getElementById('description').value;
+    const button = document.getElementById('submit');
+    button.setAttribute('disabled', 'true')
     
     const reader = new FileReader();
     let payload = {
@@ -20,7 +22,7 @@
 
     reader.addEventListener('load', () => {
       payload.coverImage = reader.result;
-      makeRequest(payload);
+      makeRequest(payload, button);
     }, false)
 
     if(coverImage) {
@@ -28,14 +30,20 @@
     }
   }
 
-  function makeRequest(payload){
+  function makeRequest(payload, button){
     const URL = '/api/blog';
     const xhr = new XMLHttpRequest();
     xhr.open('POST', URL);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.onreadystatechange = () => {
-      // send to new page or display response text;
-      console.log('RESPONSE', xhr.responseText);
+      if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+        button.removeAttribute('disabled');
+        window.location.href = '/api/blog';
+      } else {
+        const p = document.createElement('p');
+        document.body.appendChild(p);
+        p.innerHTML = xhr.resonseText;
+      }
     }
     xhr.send(JSON.stringify(payload));
   }
