@@ -28,6 +28,7 @@ const credentials = {
 };
 AWS.config.update(credentials);
 
+app.set('json spaces', 2);
 app.set('views', path.join(__dirname, 'server/templates'));
 app.set('view engine', 'hbs');
 app.use(express.static(publicPath));

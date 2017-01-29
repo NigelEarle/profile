@@ -34,6 +34,19 @@ router.route('/blog')
     .catch(err => res.send(err))
   });
 
+router.get('/blog/json', (req, res) => {
+  Blog.find()
+  .then(blogs =>  res.json(blogs).status(200))
+  .catch(err => res.json({error}).status(500))
+})
+
+router.get('/blog/:id/json', (req, res) => {
+  const {id} = req.params;
+  Blog.findOne({'_id': id})
+  .then(blog => res.json(blog).status(200))
+  .catch(err => res.json(err).status(500))
+})
+
 router.get('/blog/new', (req, res) => {
   res.render('new');
 });
