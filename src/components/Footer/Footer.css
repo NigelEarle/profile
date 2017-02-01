@@ -1,5 +1,4 @@
 .container {
-  margin-top: 180px;
 }
 
 .contact {
@@ -10,7 +9,7 @@
 .contact li {
   display: inline-block;
   list-style-type: none;
-  margin-right: 5%;
+  margin-right: 6%;
 }
 
 .copyright {

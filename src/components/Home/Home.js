@@ -8,8 +8,8 @@ import {
 const HomeComponent = () => {
   return (
     <div>
-      <HeaderComponent />
       <div className={styles.container}>
+        <HeaderComponent />
         <div className={styles.intro}>
           <h1 className={styles.heading}>Nigel Earle</h1>
           <h3 className={styles.subHeading}>Sofware Developer</h3>
@@ -18,8 +18,8 @@ const HomeComponent = () => {
             Software Developer specializing in JavaScript & Node.js. 
             As well as, other server side languages such as Python and Ruby. With some experience and a strong interest in DevOps.
           </p>
-          <FooterComponent />
         </div>
+        <FooterComponent />
       </div>
     </div>
   );

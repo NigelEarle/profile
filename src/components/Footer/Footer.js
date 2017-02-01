@@ -14,7 +14,6 @@ const FooterComponent = () => {
   return (
     <div className={styles.container}>
       <ul className={styles.contact}>
-        <li className={styles.copyright}>Nigel Earle &#169; 2017</li>
         <li>
           <a href="mailto:nigel@earle.io" className={styles.socialLink}>
             <img src={MAIL_LOGO} alt="envelope" className={styles.logo}/>

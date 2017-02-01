@@ -1,23 +1,22 @@
 .container {
   max-width: 900px;
-  height: 85%;
-  padding: 0 5% 0;
+  padding: 50px 5% 0;
   margin: auto;
 }
 
 .intro {
-  /*margin-top: 90px;*/
+  margin: 80px 0; 
   color: #000032;
 }
 
 .heading {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 500;
   color: #00b9ed;
 }
 
 .subHeading {
-  font-size: 1.8rem;
+  font-size: 2.3rem;
   font-weight: 300;
   color: #808099;
 }
@@ -30,11 +29,11 @@
 }
 
 .description {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   line-height: 1.2;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 740px) {
   .heading {
     font-size: 1.6rem;
   }
