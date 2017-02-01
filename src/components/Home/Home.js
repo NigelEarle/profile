@@ -5,8 +5,6 @@ import {
   FooterComponent,
 } from './components/../..';
 
-
-
 const HomeComponent = () => {
   return (
     <div>
@@ -20,8 +18,8 @@ const HomeComponent = () => {
             Software Developer specializing in JavaScript & Node.js. 
             As well as, other server side languages such as Python and Ruby. With some experience and a strong interest in DevOps.
           </p>
+          <FooterComponent />
         </div>
-        <FooterComponent />
       </div>
     </div>
   );
