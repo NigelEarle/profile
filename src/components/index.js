@@ -6,6 +6,7 @@ import BlogComponent from './Blog/Blog';
 import BlogListItem from './BlogListItem/BlogListItem';
 import SingleBlogComponent from './SingleBlog/SingleBlog';
 import NotFoundComponent from './NotFound/NotFound';
+import FooterComponent from './Footer/Footer';
 
 export {
   HomeComponent,
@@ -16,4 +17,5 @@ export {
   BlogListItem,
   SingleBlogComponent,
   NotFoundComponent,
+  FooterComponent,
 };
