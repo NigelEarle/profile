@@ -1,4 +1,5 @@
 import {default as DEFAULT_PERSON} from './images/default-person.png';
+import {default as HK_PANO} from './images/hk-island.jpg';
 import {default as MAIL_LOGO} from './icons/mail-logo.svg';
 import {default as GITHUB_LOGO} from './icons/github-logo.svg';
 import {default as LINKEDIN_LOGO} from './icons/linkedin-logo.svg';
@@ -12,4 +13,5 @@ export {
   LINKEDIN_LOGO,
   TWITTER_LOGO,
   STACKOVERFLOW_LOGO,
+  HK_PANO,
 };

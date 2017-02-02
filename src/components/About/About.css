@@ -1,3 +1,48 @@
 .container {
-  
+  max-width: 900px;
+  padding: 50px 5% 0;
+  margin: auto;
 }
+
+.title {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #02e5b8;
+}
+
+.pano {
+  width: 100%;
+  height: 280px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+}
+
+.container > hr {
+  border: none;
+  background-color: #eee;
+  height: 1.9px;
+  margin: 40px 0;
+}
+
+
+.about {
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+.link {
+  color: #098AF2;
+}
+
+.list {
+  margin-bottom: 10px;
+}
+
+.technologies {
+  display: inline-block;
+  padding-left: 10%;
+}
+
+
