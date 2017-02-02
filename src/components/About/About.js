@@ -16,10 +16,11 @@ const AboutComponent = () => (
       <p className={styles.about}>
         Hello, I'm Nigel Earle and I live in Kailua, HI.
         I'm a software developer with a focus on JavaScript and Node.js.
-        I began my development career several years ago, taking a full stack 
+        I began my development career a few years ago, taking a full stack 
         web development course in Hong Kong, China.
         Building stable, clean and performant software is true passion of mine. 
-        Currently, I work as software development subcontractor and an Assistant Instrutor at <a target="_blank" className={styles.link} href="http://www.devleague.com/">DevLeague</a>, a full-stack JavaScript development boot-camp.
+        Currently, I work as software development subcontractor and as an Assistant Instrutor at 
+        <a target="_blank" className={styles.link} href="http://www.devleague.com/"> DevLeague</a>, a full-stack JavaScript development boot-camp in Honolulu, HI.
       </p>
       <p>
         Some technologies that I enjoy and use professionally are...
@@ -53,7 +54,7 @@ const AboutComponent = () => (
         </li>
       </ul>
       <p>
-        Some technologies that I'm tinkering with or have a goal to learn this year are...
+        Some technologies that I'm tinkering with or have a goal to learn are...
       </p>
       <ul className={styles.technologies}>
         <li className={styles.list}>

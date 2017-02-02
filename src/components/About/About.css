@@ -8,16 +8,16 @@
 .title {
   font-weight: 500;
   line-height: 1.2;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 30px;
   color: #02e5b8;
 }
 
 .pano {
   width: 100%;
-  height: 280px;
+  height: auto;
   margin-bottom: 20px;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 .container > hr {
@@ -45,13 +45,17 @@
   padding-left: 10%;
 }
 
+.about > a:hover {
+  color: #16e0ff;
+}
+
+.list > a:hover {
+  color: #16e0ff;
+}
+
 @media (max-width: 740px) {
   .title {
-    font-size: 1.6rem;
-  }
-
-  .pano {
-    height: 150px;
+    font-size: 1.8rem;
   }
 }
 
