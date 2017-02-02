@@ -5,9 +5,10 @@ import {HeaderComponent} from './components/../..';
 const WorkComponent = () => {
   return (
     <div>
-      <HeaderComponent />
       <div className={styles.container}>
-        <h1>Work Component</h1>
+        <HeaderComponent />
+        <h1 className={styles.title}>Coming Soon!</h1>
+        <p>Check back soon for project updates</p>
       </div>
     </div>
   );
