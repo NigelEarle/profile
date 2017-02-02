@@ -10,7 +10,7 @@ const AboutComponent = () => (
   <div>
     <div className={styles.container}>
       <HeaderComponent />
-      <h1 className={styles.title}>A Little About Myself</h1>
+      <h1 className={styles.title}>About Myself</h1>
       <hr/>
       <img src={HK_PANO} alt="hong kong" className={styles.pano}/>
       <p className={styles.about}>
