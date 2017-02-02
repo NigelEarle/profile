@@ -45,4 +45,13 @@
   padding-left: 10%;
 }
 
+@media (max-width: 740px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .pano {
+    height: 150px;
+  }
+}
 
