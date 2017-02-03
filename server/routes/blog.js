@@ -3,13 +3,20 @@ const router = express.Router();
 const Blog = require('./../models/blogs');
 const uploadToS3 = require('./../helpers/images');
 
+const isAuthenticated = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/api/login');
+}
+
 router.route('/blog')
-  .get((req, res) => {
+  .get(isAuthenticated, (req, res) => {
     Blog.find()
     .then(blogs =>  res.render('index', {blogs}))
     .catch(err => res.send(error).status(500))
   })
-  .post((req, res) => {
+  .post(isAuthenticated, (req, res) => {
     const {
       title,
       coverImage,
@@ -49,18 +56,18 @@ router.get('/blog/:id/json', (req, res) => {
   })
 })
 
-router.get('/blog/new', (req, res) => {
+router.get('/blog/new', isAuthenticated, (req, res) => {
   res.render('new');
 });
 
 router.route('/blog/:id')
-  .get((req, res) => {
+  .get(isAuthenticated, (req, res) => {
     const {id} = req.params;
     Blog.findOne({'_id': id})
     .then(blog => res.render('edit', {blog}))
     .catch(err => res.send(err).status(500))
   })
-  .put((req, res) => {
+  .put(isAuthenticated, (req, res) => {
     const {id} = req.params;
     const updatedAt = new Date();
     const expression = new RegExp('https:\/\/personal-profile.s3');
@@ -104,7 +111,7 @@ router.route('/blog/:id')
     }
 
   })
-  .delete((req, res) => {
+  .delete(isAuthenticated, (req, res) => {
     const {id} = req.params;
     Blog.findOneAndRemove({'_id': id})
     .then(() => res.send(`Blog id: ${req.params.id} successfully deleted!`))

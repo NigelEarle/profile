@@ -5,6 +5,7 @@ import {default as GITHUB_LOGO} from './icons/github-logo.svg';
 import {default as LINKEDIN_LOGO} from './icons/linkedin-logo.svg';
 import {default as TWITTER_LOGO} from './icons/twitter-logo.svg';
 import {default as STACKOVERFLOW_LOGO} from './icons/stackoverflow-logo.svg';
+import {default as NE_LOGO} from './icons/NE-logo.svg';
 
 export {
   DEFAULT_PERSON,
@@ -14,4 +15,5 @@ export {
   TWITTER_LOGO,
   STACKOVERFLOW_LOGO,
   HK_PANO,
+  NE_LOGO,
 };

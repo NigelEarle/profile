@@ -3,6 +3,8 @@ import {Link} from 'react-router';
 import classNames from 'classnames/bind';
 import styles from './Header.css';
 
+import {NE_LOGO} from './../../assets';
+
 const cx = classNames.bind(styles);
 
 export class HeaderComponent extends Component{
@@ -27,7 +29,9 @@ export class HeaderComponent extends Component{
 
     return(
       <div className={styles.container}>
-        <Link to={'/'} className={styles.homeLink}>Home</Link>
+        <Link to={'/'} className={styles.homeLink}>
+          <img src={NE_LOGO} alt="logo" className={styles.logo}/>
+        </Link>
         <div className={styles.linkContainer}>
           <Link to={'/about'} className={styles.link}>About</Link>
           <Link to={'/work'} className={styles.link}>Work</Link>
