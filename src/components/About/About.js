@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './About.css';
 import {HK_PANO} from './../../assets';
+
 import {
   HeaderComponent,
   FooterComponent,
@@ -10,9 +11,9 @@ const AboutComponent = () => (
   <div>
     <div className={styles.container}>
       <HeaderComponent />
+      <img src={HK_PANO} alt="hong kong" className={styles.pano}/>
       <h1 className={styles.title}>About Myself</h1>
       <hr/>
-      <img src={HK_PANO} alt="hong kong" className={styles.pano}/>
       <p className={styles.about}>
         Hello, I'm Nigel Earle and I live in Kailua, HI.
         I'm a software developer with a focus on JavaScript and Node.js.
@@ -21,8 +22,9 @@ const AboutComponent = () => (
         Building stable, clean and performant software is true passion of mine. 
         Currently, I work as software development subcontractor and as an Assistant Instrutor at 
         <a target="_blank" className={styles.link} href="http://www.devleague.com/"> DevLeague</a>, a full-stack JavaScript development boot-camp in Honolulu, HI.
+        Have a look at my <a target="_blank" className={styles.link} href="/resume">resume</a> to see my full work experience.
       </p>
-      <p>
+      <p className={styles.techTitle}>
         Some technologies that I enjoy and use professionally are...
       </p>
       <ul className={styles.technologies}>
@@ -53,7 +55,7 @@ const AboutComponent = () => (
           <a target="_blank" className={styles.link} href="https://www.mongodb.com/">MongoDB</a>
         </li>
       </ul>
-      <p>
+      <p className={styles.techTitle}>
         Some technologies that I'm tinkering with or have a goal to learn are...
       </p>
       <ul className={styles.technologies}>

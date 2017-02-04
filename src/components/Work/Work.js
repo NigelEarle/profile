@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './Work.css'
-import {HeaderComponent} from './components/../..';
+import {
+  HeaderComponent,
+  FooterComponent,
+} from './components/../..';
 
 const WorkComponent = () => {
   return (

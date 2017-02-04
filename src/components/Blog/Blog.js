@@ -5,6 +5,7 @@ import axios from 'axios';
 import {
   HeaderComponent,
   BlogListItem,
+  FooterComponent,
 } from './components/../..';
 
 export class BlogComponent extends Component{
@@ -37,6 +38,7 @@ export class BlogComponent extends Component{
               <BlogListItem data={curr} key={idx}/>
             ))}
           </ul>
+          <FooterComponent />
         </div>
       </div>
     );

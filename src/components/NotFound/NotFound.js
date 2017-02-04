@@ -7,7 +7,7 @@ const NotFoundComponent = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>404 Not Found</h1>
-      <h3 className={styles.message}>Sorry! The page your looking for doesnt exist!</h3>
+      <h3 className={styles.message}>Sorry! The page your looking for doesn't exist!</h3>
       <img className={styles.patrick} src={PATRICK_KEYBOARD} alt="patrick keyboard"/>
     </div>
   );

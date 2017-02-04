@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const httpProxy = require('http-proxy');
 const proxy = httpProxy.createProxyServer();
+const fs = require('fs');
 
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -67,12 +68,10 @@ function checkPassword(password, hash) {
 }
 
 passport.serializeUser((user, done) => {
-  console.log('serial user', user._id);
   done(null, user._id);
 });
 
 passport.deserializeUser((id, done) => {
-  console.log('descerial user', id)
   User.findById(id, (err, user) => {
     done(err, user);
   });
@@ -103,10 +102,19 @@ app.get('/api/login', (req, res) => res.render('login'));
 app.post('/api/login', passport.authenticate('local', {
   successRedirect: '/api/blog',
   failureRedirect: '/api/login',
-}))
-app.get('/api/logout', function(req, res){
+}));
+
+app.get('/api/logout', (req, res) => {
   req.logout();
   res.redirect('/api/login');
+});
+
+app.get('/resume', (req, res) => {
+  fs.readFile('./server/resume/Nigel-Earle-Resume.pdf', (err, pdf) => {
+    if(err) return res.send(err);
+    res.contentType('application/pdf');
+    res.send(pdf);
+  });
 });
 
 if(!isProduction) {

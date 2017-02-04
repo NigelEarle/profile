@@ -7,6 +7,7 @@ import {default as TWITTER_LOGO} from './icons/twitter-logo.svg';
 import {default as STACKOVERFLOW_LOGO} from './icons/stackoverflow-logo.svg';
 import {default as NE_LOGO} from './icons/NE-logo.svg';
 import {default as PATRICK_KEYBOARD} from './icons/patrick-keyboard.svg';
+// import {default as RESUME} from './resume/resume.pdf';
 
 export {
   DEFAULT_PERSON,

@@ -1,5 +1,5 @@
 .container {
-  max-width: 900px;
+  max-width: 1020px;
   padding: 50px 5% 0;
   margin: auto;
   color: #000032;
@@ -24,10 +24,11 @@
   border: none;
   background-color: #eee;
   height: 1.9px;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .about {
+  font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 40px;
 }
@@ -40,7 +41,12 @@
   margin-bottom: 10px;
 }
 
+.techTitle {
+  font-size: 1.2rem;
+}
+
 .technologies {
+  font-size: 1.2rem;
   display: inline-block;
   padding-left: 10%;
 }
@@ -56,6 +62,10 @@
 @media (max-width: 740px) {
   .title {
     font-size: 1.8rem;
+  }
+
+  .about, .techTitle, .technologies {
+    font-size: 1rem;
   }
 }
 
