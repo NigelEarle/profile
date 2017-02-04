@@ -9,7 +9,6 @@ const isAuthenticated = (req, res, next) => {
   }
   res.redirect('/api/login');
 }
-
 router.route('/blog')
   .get(isAuthenticated, (req, res) => {
     Blog.find()
@@ -109,7 +108,6 @@ router.route('/blog/:id')
       })
       .catch(err => res.send(err).status(500))
     }
-
   })
   .delete(isAuthenticated, (req, res) => {
     const {id} = req.params;
