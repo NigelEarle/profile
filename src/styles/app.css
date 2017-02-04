@@ -2,10 +2,6 @@
   animation: fadein 1s;
  }
 
-div[data-reactroot] {
-  height: 100%
-}
-
 html, body {
   margin: 0;
   width: 100%;

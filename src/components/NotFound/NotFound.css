@@ -1,0 +1,42 @@
+.container {
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+  color: #808099;
+}
+
+.title {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.message {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.patrick {
+  width: auto;
+  height: 500px;
+}
+
+@media (max-width: 740px) {
+
+  .title {
+    font-size: 45px;
+  }
+
+  .message {
+    font-size: 25px;
+    margin: 0 4% 15px;
+  }
+
+  .patrick {
+    width: 90%;
+  }
+}
