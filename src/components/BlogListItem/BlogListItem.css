@@ -1,18 +1,24 @@
 .item {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
   list-style-type: none;
-  text-align: center;
   border: 1.5px solid lightgrey;
   margin-bottom: 50px;
-  border-radius: 4px;
-  box-shadow: 2px 2px 0.5px lightgrey;
-  padding: 4%;
+  border-radius: 3px;
+  box-shadow: 1px 1px 0 lightgrey;
+  padding: 4% 4%;
+  overflow: auto;
 }
 
 .coverImage {
-  width: 200px;
-  height: 200px;
+  float: right;
+  width: 240px;
+  height: 180px;
+  border-radius: 4px;
+}
+
+.date {
+  margin: 0;
 }
 
 .title {
@@ -20,4 +26,9 @@
   font-size: 2.4rem;
   line-height: 1.2;
   font-weight: 500;
+  text-align: left;
+}
+
+.description {
+  text-align: left;
 }
