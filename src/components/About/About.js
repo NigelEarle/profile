@@ -12,7 +12,6 @@ const AboutComponent = () => (
     <div className={styles.container}>
       <HeaderComponent />
       <img src={HK_PANO} alt="hong kong" className={styles.pano}/>
-      <h1 className={styles.title}>About Myself</h1>
       <hr/>
       <p className={styles.about}>
         Hello, I'm Nigel Earle and I live in Kailua, HI.

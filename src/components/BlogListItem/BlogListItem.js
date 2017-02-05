@@ -5,19 +5,27 @@ import styles from './BlogListItem.css';
 import dateFormat from 'dateformat';
 
 const BlogListItem = ({data}) => {
+  const descriptionPreview = (description) =>{
+    if(description.length > 150){
+      // return < 150 at space
+      return description.substring(0, 150);
+    } else {
+      return description;
+    }
+  };
+
   return (
     <li className={styles.item}>
-      <div className={styles.content}>
+      <Link to={`/blog/${data._id}`}>
         <img src={data.coverImage} className={styles.coverImage} alt="image"/>
-        <Link to={`/blog/${data._id}`}>
-          <h1 className={styles.title}>{data.title}</h1>
-        </Link>
+        <h1 className={styles.title}>{data.title}</h1>
         <ReactMarkdown
           className={styles.description}
-          source={data.description}
+          source={descriptionPreview(data.description)}
         />
+        <p className={styles.readMore}>Read more...</p>
         <p className={styles.date}>{dateFormat(data.createdAt, 'mmmm dS, yyyy')}</p>
-      </div>
+       </Link>
     </li>
   );
 };

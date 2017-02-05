@@ -19,11 +19,18 @@
 
 .date {
   margin: 0;
+  font-size: 13px;
+  color: #000032;
+}
+
+.date:visited {
+  color: #000032;
 }
 
 .title {
+  width: 70%;
   color: #000032;
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.2;
   font-weight: 500;
   text-align: left;
@@ -31,4 +38,23 @@
 
 .description {
   text-align: left;
+  max-width: 530px;
+  font-size: 1.2rem;
+  color: #000032;
+}
+
+.readMore {
+  font-size: 13px;
+  margin: 0 0 10px;
+  width: 100px;
+  color: #808099;
+  transition: color 0.3s ease;
+}
+
+.readMore:hover {
+  color: #16e0ff;
+}
+
+.description > p::after {
+  content: "...";
 }

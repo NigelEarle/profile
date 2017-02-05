@@ -10,6 +10,7 @@
   text-decoration: none;
   color: #000032;
   margin-left: 3.75em;
+  transition: color 0.3s ease;
 }
 
 .link:hover {
