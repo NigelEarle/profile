@@ -2,10 +2,11 @@
   max-width: 800px;
   margin: auto;
   list-style-type: none;
-  border: 1.5px solid lightgrey;
+  background: #FAFAFA;
   margin-bottom: 50px;
   border-radius: 3px;
-  box-shadow: 1px 1px 0 lightgrey;
+  border: 1.5px solid lightgrey;
+  box-shadow: 1px 1px 0.5px lightgrey;
   padding: 4% 4%;
   overflow: auto;
 }
