@@ -12,7 +12,7 @@
     <input type="file" id="coverImage" name="coverImage" value="{{blog.coverImage}}">
   </div>
   <div class="block">
-    <textarea type="text" class="description" id="description" name="description" value="">{{blog.description}}</textarea>
+    <textarea type="text" class="description" id="description" name="description">{{blog.description}}</textarea>
   </div>
   <div class="block">
     <button type="submit" id="submit" onclick="updateBlog('{{blog.id}}', '{{blog.coverImage}}', '{{blog.createdAt}}')">Submit</button>

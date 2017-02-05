@@ -1,0 +1,23 @@
+.item {
+  max-width: 600px;
+  margin: auto;
+  list-style-type: none;
+  text-align: center;
+  border: 1.5px solid lightgrey;
+  margin-bottom: 50px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0.5px lightgrey;
+  padding: 4%;
+}
+
+.coverImage {
+  width: 200px;
+  height: 200px;
+}
+
+.title {
+  color: #000032;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  font-weight: 500;
+}

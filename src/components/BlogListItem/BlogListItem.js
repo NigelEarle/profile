@@ -1,12 +1,19 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
+import ReactMarkdown from 'react-markdown';
+import styles from './BlogListItem.css';
 
 const BlogListItem = ({data}) => {
   return (
-    <li>
-      <img src={data.coverImage} width="150px" height="150px" alt="image"/>
-      <Link to={`/blog/${data._id}`}>{data.title}</Link>
-      <p>{data.description}</p>
+    <li className={styles.item}>
+      <img src={data.coverImage} className={styles.coverImage} alt="image"/>
+      <Link to={`/blog/${data._id}`}>
+        <h1 className={styles.title}>{data.title}</h1>
+      </Link>
+      <ReactMarkdown
+        className={styles.description}
+        source={data.description}
+      />
     </li>
   );
 };

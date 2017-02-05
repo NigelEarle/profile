@@ -33,6 +33,10 @@ const config = {
       {
         test: /\.jpe?g$|\.png$|\.svg$/i,
         loader: 'url-loader?limit=10000',
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ],
   },
