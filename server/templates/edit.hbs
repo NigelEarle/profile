@@ -1,18 +1,49 @@
 <div>
   <h1>Edit Blog Post ID: {{blog.id}}</h1>
-  <p>{{blog.title}}</p>
-  <div>
-    <input type="text" id="title" name="title" value="{{blog.title}}">
-    <input type="file" id="coverImage" name="coverImage" value="{{blog.coverImage}}">
-    <input type="text" id="description" name="description" value="{{blog.description}}">
-    <button type="submit" id="submit" onclick="updateBlog('{{blog.id}}', '{{blog.coverImage}}', '{{blog.createdAt}}')">Submit</button>
-  </div>
-  <form action="/api/blog/{{blog.id}}" method="POST">
+  <p id="response-text" class="response"></p>
+  <form action="/api/blog/{{blog.id}}" class="delete" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <button type="submit">Delete Blog Post</button>
   </form>
-  <p id="response-text"></p>
+  <div class="block">
+    <input type="text" id="title" name="title" class="title" value="{{blog.title}}">
+  </div>
+  <div class="block">
+    <input type="file" id="coverImage" name="coverImage" value="{{blog.coverImage}}">
+  </div>
+  <div class="block">
+    <textarea type="text" class="description" id="description" name="description" value="">{{blog.description}}</textarea>
+  </div>
+  <div class="block">
+    <button type="submit" id="submit" onclick="updateBlog('{{blog.id}}', '{{blog.coverImage}}', '{{blog.createdAt}}')">Submit</button>
+  </div>
 </div>
+
+<style>
+  .delete {
+    margin-bottom: 30px;
+  }
+
+  .title {
+    width: 500px;
+    height: 40px;
+    font-size: 20px
+  }
+
+  .description {
+    width: 500px;
+    height: 300px;
+    font-size: 16px
+  }
+
+  .block {
+    margin-bottom: 30px;
+  }
+
+  .response {
+    font-size: 20px;
+  }
+</style>
 
 <script>
   function updateBlog(id, originalImage, createdAt){

@@ -1,16 +1,42 @@
 <div>
   <h1>NEW BLOG POST</h1>
-  <input type="text" id="title" name="title" placeholder="Title">
-  <input type="file" id="coverImage" name="coverImage" value="">
-  <input type="text" id="description" name="description" placeholder="Description" />
-  <button type="submit" id="submit" onclick="sendBlog()">Submit</button>
+  <div class="block">
+    <input type="text" id="title" name="title" class="title" placeholder="Title">
+  </div>
+  <div class="block">
+    <input type="file" id="coverImage" name="coverImage">
+  </div>
+  <div class="block">
+    <textarea rows="20" cols="100" id="description" class="description" placeholder="Description"></textarea>
+  </div>
+  <div class="block">
+    <button type="button" id="submit" onclick="sendBlog()">Submit</button>
+  </div>
 </div>
+<style>
+  .title {
+    width: 500px;
+    height: 40px;
+    font-size: 20px
+  }
+
+  .description {
+    width: 500px;
+    height: 300px;
+    font-size: 16px
+  }
+
+  .block {
+    margin-bottom: 30px;
+  }
+</style>
+
 <script>
   function sendBlog(){
-    // disable submit when clicked
     const title = document.getElementById('title').value;
     const coverImage = document.getElementById('coverImage').files[0];
     const description = document.getElementById('description').value;
+
     const button = document.getElementById('submit');
     button.setAttribute('disabled', 'true')
     

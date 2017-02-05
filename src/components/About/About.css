@@ -1,5 +1,5 @@
 .container {
-  max-width: 1020px;
+  max-width: 1000px;
   padding: 50px 5% 0;
   margin: auto;
   color: #000032;
@@ -37,6 +37,10 @@
   color: #098AF2;
 }
 
+.link:hover {
+  color: #16e0ff;
+}
+
 .list {
   margin-bottom: 10px;
 }
@@ -51,13 +55,6 @@
   padding-left: 10%;
 }
 
-.about > a:hover {
-  color: #16e0ff;
-}
-
-.list > a:hover {
-  color: #16e0ff;
-}
 
 @media (max-width: 740px) {
   .title {
