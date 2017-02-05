@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import styles from './BlogListItem.css';
 import dateFormat from 'dateformat';
 
+import {CALENDAR_LOGO} from './../../assets';
+
 const BlogListItem = ({data}) => {
   const descriptionPreview = (description) =>{
     if(description.length > 150){
@@ -24,7 +26,8 @@ const BlogListItem = ({data}) => {
           source={descriptionPreview(data.description)}
         />
         <p className={styles.readMore}>Read more...</p>
-        <p className={styles.date}>{dateFormat(data.createdAt, 'mmmm dS, yyyy')}</p>
+          <img src={CALENDAR_LOGO} className={styles.calendar} alt="calendar logo"/>
+          <p className={styles.date}>{dateFormat(data.createdAt, 'mmmm dS, yyyy')}</p>
        </Link>
     </li>
   );

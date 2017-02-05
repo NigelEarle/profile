@@ -22,6 +22,7 @@
   margin: 0;
   font-size: 13px;
   color: #000032;
+  display: inline-block;
 }
 
 .date:visited {
@@ -58,4 +59,12 @@
 
 .description > p::after {
   content: "...";
+}
+
+.calendar {
+  position: relative;
+  top: 3px;
+  width: 17px;
+  height: 17px;
+  margin-right: 7px;
 }
