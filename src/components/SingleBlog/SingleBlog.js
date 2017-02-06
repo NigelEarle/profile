@@ -2,11 +2,17 @@ import React, {Component} from 'react';
 import styles from './SingleBlog.css';
 import axios from 'axios';
 import dateFormat from 'dateformat';
+import ReactMarkdown from 'react-markdown';
 
 import {
   HeaderComponent,
   NotFoundComponent,
+  FooterComponent,
 } from './components/../..';
+
+import {
+  CALENDAR_LOGO
+} from './../../assets';
 
 export class SingleBlogComponent extends Component {
   constructor(props) {
@@ -46,11 +52,20 @@ export class SingleBlogComponent extends Component {
     const date = dateFormat(data.createdAt, 'mmmm dS, yyyy');
     return (
       <div>
-        <HeaderComponent />
-        <img src={data.coverImage} width="450px" height="125px" alt="image"/>
-        <h1>{data.title}</h1>
-        <p>{data.description}</p>
-        <p>{date}</p>
+        <div className={styles.container}>
+          <HeaderComponent />
+          <div className={styles.heading}>
+            <h1 className={styles.title}>{data.title}</h1>
+            <img src={CALENDAR_LOGO} className={styles.calendar} alt="calendar"/>
+            <p className={styles.date}>{date}</p>
+          </div>
+          <img src={data.coverImage} className={styles.coverImage} alt="image"/>
+          <ReactMarkdown
+            className={styles.description}
+            source={data.description}
+          />
+          <FooterComponent />
+        </div>
       </div>
     );
   }

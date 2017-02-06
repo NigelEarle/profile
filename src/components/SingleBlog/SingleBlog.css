@@ -1,0 +1,45 @@
+.container {
+  max-width: 1000px;
+  padding: 50px 5% 0;
+  margin: auto;
+  color: #000032;
+}
+
+.heading {
+  margin-bottom: 40px;
+}
+
+.title {
+  width: 70%;
+  color: #000032;
+  font-size: 2.8rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.date {
+  font-size: 13px;
+  color: #000032;
+  display: inline-block;
+}
+
+.coverImage {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.calendar {
+  position: relative;
+  top: 3px;
+  width: 17px;
+  height: 17px;
+  margin-right: 7px;
+}
+
+.description {
+  padding: 0 8%;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 1.3rem;
+}
