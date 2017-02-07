@@ -109,14 +109,6 @@ app.get('/api/logout', (req, res) => {
   res.redirect('/api/login');
 });
 
-app.get('/resume', (req, res) => {
-  fs.readFile('./server/resume/Nigel-Earle-Resume.pdf', (err, pdf) => {
-    if(err) return res.send(err);
-    res.contentType('application/pdf');
-    res.send(pdf);
-  });
-});
-
 if(!isProduction) {
   const bundle = require('./server/bundle.js');
   bundle();

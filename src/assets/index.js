@@ -8,7 +8,7 @@ import {default as STACKOVERFLOW_LOGO} from './icons/stackoverflow-logo.svg';
 import {default as NE_LOGO} from './icons/NE-logo.svg';
 import {default as PATRICK_KEYBOARD} from './icons/patrick-keyboard.svg';
 import {default as CALENDAR_LOGO} from './icons/calendar-logo.svg';
-// import {default as RESUME} from './resume/resume.pdf';
+import {default as RESUME} from './resume/Nigel-Earle-Resume.pdf';
 
 export {
   DEFAULT_PERSON,
@@ -21,4 +21,5 @@ export {
   NE_LOGO,
   PATRICK_KEYBOARD,
   CALENDAR_LOGO,
+  RESUME,
 };

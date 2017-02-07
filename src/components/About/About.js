@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './About.css';
 import {HK_PANO} from './../../assets';
 
+import {RESUME} from './../../assets';
+
 import {
   HeaderComponent,
   FooterComponent,
@@ -21,7 +23,7 @@ const AboutComponent = () => (
         Building stable, clean and performant software is true passion of mine. 
         Currently, I work as software development subcontractor and as an Assistant Instrutor at 
         <a target="_blank" className={styles.link} href="http://www.devleague.com/"> DevLeague</a>, a full-stack JavaScript development boot-camp in Honolulu, HI.
-        Have a look at my <a target="_blank" className={styles.link} href="/resume">resume</a> to see my full work experience.
+        Have a look at my <a target="_blank" className={styles.link} href={RESUME}>resume</a> to see my full work experience.
       </p>
       <p className={styles.techTitle}>
         Some technologies that I enjoy and use professionally are...

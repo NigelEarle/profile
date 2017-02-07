@@ -7,6 +7,7 @@ import dateFormat from 'dateformat';
 import {CALENDAR_LOGO} from './../../assets';
 
 const BlogListItem = ({data}) => {
+
   const descriptionPreview = (description) => {
     if(description.length > 110){
       let trimmed = description.substring(0, 110);
