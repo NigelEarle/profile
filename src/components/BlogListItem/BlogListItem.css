@@ -10,12 +10,18 @@
   padding: 3% 3%;
   overflow: auto;
 }
+.imageContainer {
+  float: right;
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+}
 
 .coverImage {
-  float: right;
-  width: 26%;
-  height: auto;
   border-radius: 3px;
+  width: 100%;
+  height: auto;
 }
 
 .date {
@@ -55,10 +61,6 @@
 
 .readMore:hover {
   color: #16e0ff;
-}
-
-.description code {
-  background-color: lightgrey;
 }
 
 .calendar {

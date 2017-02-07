@@ -8,38 +8,16 @@ import {CALENDAR_LOGO} from './../../assets';
 
 const BlogListItem = ({data}) => {
 
-  const descriptionPreview = (description) => {
-    if(description.length > 110){
-      let trimmed = description.substring(0, 110);
-      if(trimmed.charAt(trimmed.length - 1) === ' ') {
-        return trimmed;
-      }
-      return findEndingSpace(trimmed);
-    } else {
-      if (description.charAt(description.lenth - 1) === ' ') {
-        return description;
-      } else {
-        return findEndingSpace(description);
-      }
-    }
-  };
-
-  const findEndingSpace = (string) => {
-    for(let i = string.length; i > 0; i--) {
-      if(string[i] === ' ') {
-        return string.substring(0, i);
-      }
-    }
-  }
-
   return (
     <li className={styles.item}>
       <Link to={`/blog/${data._id}`}>
-        <img
-          src={data.coverImage}
-          className={styles.coverImage}
-          alt="image"
-        />
+        <div className={styles.imageContainer}>
+          <img
+            src={data.coverImage}
+            className={styles.coverImage}
+            alt="image"
+          />
+        </div>
         <h1 className={styles.title}>{data.title}</h1>
         <img
           src={CALENDAR_LOGO}
