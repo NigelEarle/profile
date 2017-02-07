@@ -18,6 +18,7 @@ router.route('/blog')
   .post(isAuthenticated, (req, res) => {
     const {
       title,
+      subTitle,
       coverImage,
       description,
     } = req.body;
@@ -28,6 +29,7 @@ router.route('/blog')
     .then(coverImage => {
       let payload = {
         title,
+        subTitle,
         coverImage,
         description,
         createdAt,
@@ -73,6 +75,7 @@ router.route('/blog/:id')
 
     const {
       title,
+      subTitle,
       coverImage,
       description,
       createdAt,
@@ -80,8 +83,9 @@ router.route('/blog/:id')
 
     let payload = {
       title,
-      description,
+      subTitle,
       coverImage,
+      description,
       createdAt,
       updatedAt,
     };

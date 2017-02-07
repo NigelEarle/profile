@@ -35,14 +35,19 @@ const BlogListItem = ({data}) => {
   return (
     <li className={styles.item}>
       <Link to={`/blog/${data._id}`}>
-        <img src={data.coverImage} className={styles.coverImage} alt="image"/>
-        <h1 className={styles.title}>{data.title}</h1>
-        <img src={CALENDAR_LOGO} className={styles.calendar} alt="calendar logo"/>
-        <p className={styles.date}>{dateFormat(data.createdAt, 'mmmm dS, yyyy')}</p>
-        <ReactMarkdown
-          className={styles.description}
-          source={descriptionPreview(data.description)}
+        <img
+          src={data.coverImage}
+          className={styles.coverImage}
+          alt="image"
         />
+        <h1 className={styles.title}>{data.title}</h1>
+        <img
+          src={CALENDAR_LOGO}
+          className={styles.calendar}
+          alt="calendar logo"
+        />
+        <p className={styles.date}>{dateFormat(data.createdAt, 'mmmm dS, yyyy')}</p>
+        <h2 className={styles.subTitle}>{data.subTitle}</h2>
         <p className={styles.readMore}>Read more...</p>
        </Link>
     </li>

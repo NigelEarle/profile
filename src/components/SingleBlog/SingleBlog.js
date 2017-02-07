@@ -74,12 +74,9 @@ export class SingleBlogComponent extends Component {
     const {isValidRoute, data} = this.state;
     return (
       <div>
-        {isValidRoute &&
+        {isValidRoute ?
           this.showBlogPost(data)
-        }
-
-        {!isValidRoute &&
-          <NotFoundComponent />
+        : <NotFoundComponent />
         }
       </div>
     )

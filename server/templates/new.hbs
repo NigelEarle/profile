@@ -4,6 +4,9 @@
     <input type="text" id="title" name="title" class="title" placeholder="Title">
   </div>
   <div class="block">
+    <input type="text" id="subTitle" name="subTitle" class="subTitle" placeholder="Sub-Title">
+  </div>
+  <div class="block">
     <input type="file" id="coverImage" name="coverImage">
   </div>
   <div class="block">
@@ -20,6 +23,12 @@
     font-size: 20px
   }
 
+  .subTitle {
+    width: 500px;
+    height: 40px;
+    font-size: 18px
+  }
+
   .description {
     width: 500px;
     height: 300px;
@@ -34,6 +43,7 @@
 <script>
   function sendBlog(){
     const title = document.getElementById('title').value;
+    const subTitle = document.getElementById('subTitle').value;
     const coverImage = document.getElementById('coverImage').files[0];
     const description = document.getElementById('description').value;
 
@@ -43,6 +53,7 @@
     const reader = new FileReader();
     let payload = {
       title,
+      subTitle,
       description,
     }
 

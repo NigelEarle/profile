@@ -9,6 +9,9 @@
     <input type="text" id="title" name="title" class="title" value="{{blog.title}}">
   </div>
   <div class="block">
+    <input type="text" id="subTitle" name="subTitle" class="subTitle" value="{{blog.subTitle}}">
+  </div>
+  <div class="block">
     <input type="file" id="coverImage" name="coverImage" value="{{blog.coverImage}}">
   </div>
   <div class="block">
@@ -27,7 +30,13 @@
   .title {
     width: 500px;
     height: 40px;
-    font-size: 20px
+    font-size: 20px;
+  }
+
+  .subTitle {
+    width: 500px;
+    height: 40px;
+    font-size: 18px
   }
 
   .description {
@@ -48,6 +57,7 @@
 <script>
   function updateBlog(id, originalImage, createdAt){
     const title = document.getElementById('title').value;
+    const subTitle = document.getElementById('subTitle').value;
     const newCoverImage = document.getElementById('coverImage').files[0];
     const description = document.getElementById('description').value;
     const button = document.getElementById('submit');
@@ -58,6 +68,7 @@
 
     let payload = {
       title,
+      subTitle,
       description,
       createdAt,
     }

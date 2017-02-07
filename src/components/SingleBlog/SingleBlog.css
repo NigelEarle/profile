@@ -43,6 +43,10 @@
   font-size: 1.3rem;
 }
 
+.description code {
+  background-color: lightgrey;
+}
+
 @media (max-width: 740px) {
   .title {
     font-size: 1.8rem;

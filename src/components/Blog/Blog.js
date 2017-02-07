@@ -33,11 +33,18 @@ export class BlogComponent extends Component{
       <div>
         <div className={styles.container}>
           <HeaderComponent />
-          <ul className={styles.list}>
-            {data.map((curr, idx) => (
-              <BlogListItem data={curr} key={idx}/>
-            ))}
-          </ul>
+          {data.length !== 0 ?
+            <ul className={styles.list}>
+              {data.map((curr, idx) => (
+                <BlogListItem data={curr} key={idx}/>
+              ))}
+            </ul>
+            :
+            <div>
+              <h1>Blog Coming Soon</h1>
+            </div>
+          }
+
           <FooterComponent />
         </div>
       </div>
