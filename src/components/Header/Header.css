@@ -18,7 +18,8 @@
 }
 
 .homeLink {
-  composes: link;
+  position: relative;
+  bottom: 8px;
   margin: 0 auto;
 }
 
@@ -137,6 +138,11 @@
 
   .linkContainer {
     display: none;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
   }
 }
 
