@@ -3,19 +3,19 @@
   margin: auto;
   list-style-type: none;
   background: #FAFAFA;
-  margin-bottom: 50px;
-  border-radius: 3px;
+  margin-bottom: 3%;
+  border-radius: 2px;
   border: 1.5px solid lightgrey;
   box-shadow: 1px 1px 0.5px lightgrey;
-  padding: 4% 4%;
+  padding: 3% 3%;
   overflow: auto;
 }
 
 .coverImage {
   float: right;
-  width: 240px;
-  height: 180px;
-  border-radius: 4px;
+  width: 26%;
+  height: auto;
+  border-radius: 3px;
 }
 
 .date {
@@ -38,6 +38,7 @@
 }
 
 .description {
+  width: 70%;
   text-align: left;
   max-width: 530px;
   font-size: 1.2rem;
@@ -66,4 +67,30 @@
   width: 17px;
   height: 17px;
   margin-right: 7px;
+}
+
+@media (max-width: 740px) {
+  .item {
+    margin: 0 0 5%;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: .7rem;
+  }
+
+  .calendar{
+    width: 13px;
+    height: 15px;
+  }
+
+  .readMore {
+    font-size: 10px;
+  }
+  .date {
+    font-size: 10px;
+  }
 }
