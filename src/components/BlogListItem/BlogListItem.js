@@ -9,12 +9,27 @@ import {CALENDAR_LOGO} from './../../assets';
 const BlogListItem = ({data}) => {
   const descriptionPreview = (description) => {
     if(description.length > 110){
-      // return < 150 at space
-      return description.substring(0, 110);
+      let trimmed = description.substring(0, 110);
+      if(trimmed.charAt(trimmed.length - 1) === ' ') {
+        return trimmed;
+      }
+      return findEndingSpace(trimmed);
     } else {
-      return description;
+      if (description.charAt(description.lenth - 1) === ' ') {
+        return description;
+      } else {
+        return findEndingSpace(description);
+      }
     }
   };
+
+  const findEndingSpace = (string) => {
+    for(let i = string.length; i > 0; i--) {
+      if(string[i] === ' ') {
+        return string.substring(0, i);
+      }
+    }
+  }
 
   return (
     <li className={styles.item}>

@@ -58,7 +58,7 @@
 }
 
 .description > p::after {
-  content: "...";
+  content: " ...";
 }
 
 .calendar {
