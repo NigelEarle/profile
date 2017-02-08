@@ -17,9 +17,17 @@
 }
 
 .date {
+  margin-bottom: 0;
   font-size: 13px;
   color: #000032;
   display: inline-block;
+}
+
+.container hr {
+  border: none;
+  background-color: #eee;
+  height: 1.9px;
+  margin: 4.5% 0;
 }
 
 .coverImage {

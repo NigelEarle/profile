@@ -59,6 +59,7 @@ export class SingleBlogComponent extends Component {
             <img src={CALENDAR_LOGO} className={styles.calendar} alt="calendar"/>
             <p className={styles.date}>{date}</p>
           </div>
+          <hr/>
           <img src={data.coverImage} className={styles.coverImage} alt="image"/>
           <ReactMarkdown
             className={styles.description}

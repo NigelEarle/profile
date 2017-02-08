@@ -13,8 +13,9 @@ const AboutComponent = () => (
   <div>
     <div className={styles.container}>
       <HeaderComponent />
-      <img src={HK_PANO} alt="hong kong" className={styles.pano}/>
+      <h1 className={styles.heading}>About</h1>
       <hr/>
+      <img src={HK_PANO} alt="hong kong" className={styles.pano}/>
       <p className={styles.about}>
         Hello, I'm Nigel Earle and I live in Kailua, HI.
         I'm a software developer with a focus on JavaScript and Node.js.

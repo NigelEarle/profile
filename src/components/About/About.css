@@ -12,11 +12,15 @@
   border-radius: 5px;
 }
 
-.container > hr {
+.heading {
+  font-size: 40px;
+}
+
+.container hr {
   border: none;
   background-color: #eee;
   height: 1.9px;
-  margin: 20px 0;
+  margin: 35px 0;
 }
 
 .about {
@@ -56,6 +60,10 @@
 
   .about, .techTitle, .technologies {
     font-size: 1rem;
+  }
+
+  .heading {
+    font-size: 32px;
   }
 }
 

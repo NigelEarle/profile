@@ -5,6 +5,23 @@
   color: #000032;
 }
 
+.heading {
+  font-size: 40px;
+}
+
+.container > hr {
+  border: none;
+  background-color: #eee;
+  height: 1.9px;
+  margin: 4.5% 0;
+}
+
 .list {
   padding: 0;
+}
+
+@media (max-width: 740px) {
+  .heading {
+    font-size: 32px;
+  }
 }

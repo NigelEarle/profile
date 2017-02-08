@@ -33,6 +33,8 @@ export class BlogComponent extends Component{
       <div>
         <div className={styles.container}>
           <HeaderComponent />
+          <h1 className={styles.heading}>Blog</h1>
+          <hr/>
           {data.length !== 0 ?
             <ul className={styles.list}>
               {data.map((curr, idx) => (
