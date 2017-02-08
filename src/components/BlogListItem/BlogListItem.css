@@ -44,6 +44,11 @@
   font-size: 1.7rem;
   line-height: 1.2;
   text-align: left;
+  transition: color .3s ease;
+}
+
+.title:hover, .subTitle:hover {
+  color: #16e0ff;
 }
 
 .description {
@@ -80,6 +85,7 @@
   font-size: 19px;
   color: #808099;
   font-weight: 500;
+  transition: color .3s ease;
 }
 
 @media (max-width: 740px) {
