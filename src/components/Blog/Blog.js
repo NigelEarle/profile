@@ -13,11 +13,10 @@ export class BlogComponent extends Component{
     super(props);
     this.state = {
       data: [],
-      error: '',
     };
   } 
 
-  componentDidMount() {
+  componentWillMount() {
     axios.get('/api/blog/json')
     .then(blogs => {
       const {data} = blogs;
