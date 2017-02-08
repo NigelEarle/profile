@@ -64,6 +64,13 @@
   color: #16e0ff;
 }
 
+.description img {
+  width: 70%;
+  margin: 5% 0 5% 17%;
+  border-radius: 3px;
+  height: auto;
+}
+
 @media (max-width: 740px) {
   .title {
     font-size: 1.8rem;
@@ -77,5 +84,10 @@
   .description pre {
     width: auto;
     margin: 5% 0;
+  }
+
+  .description img {
+    width: 100%;
+    margin: 5% auto;
   }
 }
