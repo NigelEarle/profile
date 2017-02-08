@@ -43,8 +43,17 @@
   font-size: 1.3rem;
 }
 
+.description pre {
+  width: 70%;
+  margin: 5% auto;
+  overflow: scroll;
+  background: #F1F0EA;
+  padding: 10px 10px;
+  white-space: pre-wrap;
+}
+
 .description code {
-  background-color: lightgrey;
+  background: #F1F0EA;
 }
 
 @media (max-width: 740px) {
@@ -55,5 +64,10 @@
   .description {
     padding: 0;
     font-size: 1rem;
+  }
+
+  .description pre {
+    width: auto;
+    margin: 5% 0;
   }
 }
