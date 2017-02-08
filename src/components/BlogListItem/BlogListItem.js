@@ -26,7 +26,6 @@ const BlogListItem = ({data}) => {
         />
         <p className={styles.date}>{dateFormat(data.createdAt, 'mmmm dS, yyyy')}</p>
         <h2 className={styles.subTitle}>{data.subTitle}</h2>
-        <p className={styles.readMore}>Read more...</p>
        </Link>
     </li>
   );
