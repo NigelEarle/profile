@@ -1,10 +1,6 @@
 const express = require('express');
 const path = require('path');
 
-const webpack = require('webpack');
-const webpackMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('./webpack.config.js');
 const mainPath = path.resolve(__dirname, 'src', 'app.js');
 
 const bodyParser = require('body-parser');
@@ -119,6 +115,10 @@ app.get('/api/logout', (req, res) => {
 });
 
 if(isDev) {
+  const webpack = require('webpack');
+  const config = require('./webpack.config.js');
+  const webpackMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(config);
   const middleware = webpackMiddleware(compiler, {
     publicPath: config.output.publicPath,
