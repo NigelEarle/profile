@@ -21,12 +21,14 @@ module.exports = () => {
   const bundler = new WebpackDevServer(compiler, {
     publicPath: '/build/',
     hot: true,
+    historyApiFallback: true,
     quiet: false,
     noInfo: true,
     stats: {
       colors: true,
     },
   });
+
 
   bundler.listen(8080, 'localhost', () => { console.log('Building project please wait...') })
 };

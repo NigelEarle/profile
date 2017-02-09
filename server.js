@@ -47,6 +47,10 @@ app.use(methodOverride(function (req, res) {
 
 app.use('/api', blog);
 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(publicPath))
+// });
+
 const compare = Promise.promisify(bcrypt.compare)
 mongoose.Promise = Promise;
 mongoose.connect(DB_URL);

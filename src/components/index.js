@@ -1,3 +1,4 @@
+import AppComponent from './App/App';
 import HomeComponent from './Home/Home';
 import HeaderComponent from './Header/Header';
 import WorkComponent from './Work/Work';
@@ -9,6 +10,7 @@ import NotFoundComponent from './NotFound/NotFound';
 import FooterComponent from './Footer/Footer';
 
 export {
+  AppComponent,
   HomeComponent,
   HeaderComponent,
   WorkComponent,

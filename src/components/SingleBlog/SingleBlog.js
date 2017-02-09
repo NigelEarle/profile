@@ -20,7 +20,7 @@ export class SingleBlogComponent extends Component {
     this.makeRequest = this.makeRequest.bind(this);
     this.state = {
       data: {},
-      isValidRoute: true,
+      isValidRoute: null,
     }
   }
 
