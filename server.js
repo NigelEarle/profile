@@ -26,7 +26,7 @@ const User = require('./server/models/user');
 
 const isDev = process.env.NODE_ENV !== 'production';
 const PORT = isDev ? 3000 : process.env.PORT;
-const DB_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/personal_profile';
+const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/personal_profile';
 const publicPath = path.resolve(__dirname, 'public');
 
 const app = express();
@@ -58,7 +58,7 @@ app.use('/api', blog);
 
 const compare = Promise.promisify(bcrypt.compare)
 mongoose.Promise = Promise;
-mongoose.connect(DB_URL);
+mongoose.connect(MONGO_URL);
 
 const credentials = {
   accessKeyId: AWS_ACCESS_KEY,

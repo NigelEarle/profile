@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "node server"
   },
   "repository": "git@bitbucket.org:nwre87/personal-profile.git",
   "author": "nwre87 <nigel@earle.io>",
