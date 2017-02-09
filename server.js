@@ -1,8 +1,12 @@
 const express = require('express');
 const path = require('path');
-const httpProxy = require('http-proxy');
-const proxy = httpProxy.createProxyServer();
-const fs = require('fs');
+
+const webpack = require('webpack');
+const webpackMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+// const webpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.config.js');
+const mainPath = path.resolve(__dirname, 'src', 'app.js');
 
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -19,9 +23,9 @@ const sessionConfig = require('./server/config/session.json') // adjust for prod
 const blog = require('./server/routes/blog');
 const User = require('./server/models/user');
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isDev = process.env.NODE_ENV !== 'production';
+const PORT = isDev ? 3000 : process.env.PORT;
 const DB_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/personal_profile';
-const PORT = isProduction ? process.env.PORT : 3000;
 const publicPath = path.resolve(__dirname, 'public');
 
 const app = express();
@@ -46,10 +50,6 @@ app.use(methodOverride(function (req, res) {
 }))
 
 app.use('/api', blog);
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(publicPath))
-// });
 
 const compare = Promise.promisify(bcrypt.compare)
 mongoose.Promise = Promise;
@@ -113,17 +113,33 @@ app.get('/api/logout', (req, res) => {
   res.redirect('/api/login');
 });
 
-if(!isProduction) {
-  const bundle = require('./server/bundle.js');
-  bundle();
+if(isDev) {
+  const compiler = webpack(config);
+  const middleware = webpackMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    contentBase: 'src',
+    historyApiFallback: true,
+    stats: {
+      colors: true,
+      hash: false,
+      timings: true,
+      chunks: false,
+      chunkModules: false,
+      modules: false
+    }
+  });
 
-  app.all('/build/*', (req, res) => {
-    proxy.web(req, res, {
-      target: 'http://localhost:8080',
-    });
+  app.use(middleware);
+  app.use(webpackHotMiddleware(compiler));
+  app.get('*', (req, res) => {
+    res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'build/index.html')));
+    res.end();
+  });
+} else {
+  app.use(express.static(__dirname + '/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build/index.html'));
   });
 }
-
-proxy.on('error', e => console.log('Could not connect to proxy, please try again...'))
 
 app.listen(PORT, () => console.log(`Server running at ${PORT}`));

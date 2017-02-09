@@ -1,20 +1,19 @@
-const Webpack = require('webpack');
 const path = require('path');
+const Webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
-const buildPath = path.resolve(__dirname, 'public', 'build');
 const mainPath = path.resolve(__dirname, 'src', 'app.js')
 
 const config = {
-  devtool: 'eval',
+  devtool: 'eval-source-map',
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-hot-middleware/client?reload=true',
     mainPath,
   ],
   output: {
-    path: buildPath,
+    path: path.join(__dirname, '/build/'),
     filename: 'bundle.js',
-    publicPath: '/build/',
+    publicPath: '/',
   },
   module: {
     loaders: [
@@ -23,7 +22,10 @@ const config = {
         loader: 'babel-loader',
         exclude: [nodeModulesPath],
         query: {
-          presets: ['es2015', 'react'],
+          presets: [
+            'es2015',
+            'react',
+          ],
         }
       },
       {
@@ -40,7 +42,15 @@ const config = {
       }
     ],
   },
-  plugins: [new Webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      inject: 'body',
+      filename: 'index.html'
+    }),
+    new Webpack.NoEmitOnErrorsPlugin(),
+    new Webpack.HotModuleReplacementPlugin()
+  ]
 };
 
 module.exports = config;
