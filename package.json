@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "build": "webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
   "repository": "git@bitbucket.org:nwre87/personal-profile.git",
   "author": "nwre87 <nigel@earle.io>",
