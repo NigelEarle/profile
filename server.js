@@ -4,7 +4,6 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-// const webpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config.js');
 const mainPath = path.resolve(__dirname, 'src', 'app.js');
 
@@ -18,8 +17,10 @@ const Promise = require('bluebird');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const AWSconfig = require('./server/config/aws.json'); // adjust for production
-const sessionConfig = require('./server/config/session.json') // adjust for production
+const AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY || require('./server/config/aws.json').AWSAccessKeyId;
+const AWS_SECRET = process.env.AWS_SECRET || require('./server/config/aws.json').AWSSecretKey;
+
+const SESSION_SECRET = process.env.SESSION_SECRET || require('./server/config/session.json').secret
 const blog = require('./server/routes/blog');
 const User = require('./server/models/user');
 
@@ -37,7 +38,11 @@ app.use(express.static(publicPath));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
 
-app.use(session(sessionConfig));
+app.use(session({
+  secret: SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -56,8 +61,8 @@ mongoose.Promise = Promise;
 mongoose.connect(DB_URL);
 
 const credentials = {
-  accessKeyId: AWSconfig.AWSAccessKeyId,
-  secretAccessKey: AWSconfig.AWSSecretKey,
+  accessKeyId: AWS_ACCESS_KEY,
+  secretAccessKey: AWS_SECRET,
 };
 AWS.config.update(credentials);
 
