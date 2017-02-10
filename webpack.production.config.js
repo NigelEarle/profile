@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  devtool: 'source-map',
   entry: [
     path.join(__dirname, 'src/app.js')
   ],
@@ -14,7 +13,7 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
@@ -51,7 +50,7 @@ module.exports = {
       {
         test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         query: {
           'presets': [
             'es2015',
@@ -61,19 +60,20 @@ module.exports = {
       },
       {
         test: /\.jpe?g$|\.png$|\.svg$|\.pdf$/i,
-        loader: 'url-loader?limit=10000',
+        use: 'url-loader?limit=10000',
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        use: 'json-loader'
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
+        use: ExtractTextPlugin.extract(
           {
             fallback: 'style-loader', 
             loader: [
               'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+              'postcss-loader',
             ]
           }
         )

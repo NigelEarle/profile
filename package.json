@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "postinstall": "webpack -p --config ./webpack.production.config.js --progress",
-    "heroku-postbuild": "webpack -p --config ./webpack.production.config.js --progress"
+    "postinstall": "webpack --config ./webpack.production.config.js --progress",
+    "heroku-postbuild": "webpack --config ./webpack.production.config.js --progress"
   },
   "repository": "git@bitbucket.org:nwre87/personal-profile.git",
   "author": "nwre87 <nigel@earle.io>",
@@ -39,7 +39,7 @@
     "mongoose": "^4.7.8",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "postcss-loader": "^1.2.1",
+    "postcss-loader": "^1.2.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-markdown": "^2.4.4",
