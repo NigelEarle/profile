@@ -4,8 +4,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js"
-    // "build": "rimraf build && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors",
-    // "postinstall": "rimraf build && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
   "repository": "git@bitbucket.org:nwre87/personal-profile.git",
   "author": "nwre87 <nigel@earle.io>",
