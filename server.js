@@ -1,4 +1,6 @@
 const express = require('express');
+
+console.log('EXPRESS MODULE', express)
 const path = require('path');
 
 const mainPath = path.resolve(__dirname, 'src', 'app.js');
