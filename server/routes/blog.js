@@ -1,4 +1,4 @@
-const express = require('Express');
+const express = require('express');
 const router = express.Router();
 const Blog = require('./../models/blogs');
 const uploadToS3 = require('./../helpers/images');

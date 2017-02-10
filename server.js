@@ -9,7 +9,7 @@ const mainPath = path.resolve(__dirname, 'src', 'app.js');
 
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-// const session = require('express-session');
+const session = require('express-session');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const AWS = require('aws-sdk');
@@ -38,11 +38,11 @@ app.use(express.static(publicPath));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
 
-// app.use(session({
-//   secret: SESSION_SECRET,
-//   resave: true,
-//   saveUninitialized: true
-// }));
+app.use(session({
+  secret: SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
