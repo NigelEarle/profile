@@ -83,15 +83,5 @@ module.exports = {
         )
       }
     ]
-  },
-  postcss: function(webpack) {
-    return [
-      postcssImport({
-        addDependencyTo: webpack,
-        path: ['./src'],
-      }),
-      cssnext({ browsers: ['last 2 versions', 'IE > 10'] }),
-      postcssReporter({ clearMessages: true }),
-    ];
-  },
+  }
 };
