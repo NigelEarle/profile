@@ -50,5 +50,9 @@
     "url-loader": "^0.5.7",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.16.1"
+  },
+  "engines": {
+    "node": "6.9.5",
+    "npm": "3.10.10"
   }
 }
