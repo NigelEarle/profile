@@ -3,6 +3,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const postcssImport = require('postcss-import');
+const cssnext = require('postcss-cssnext');
+const postcssReporter = require('postcss-reporter');
+
 module.exports = {
   entry: [
     path.join(__dirname, 'src/app.js')
@@ -79,5 +83,15 @@ module.exports = {
         )
       }
     ]
-  }
+  },
+  postcss: function(webpack) {
+    return [
+      postcssImport({
+        addDependencyTo: webpack,
+        path: ['./src'],
+      }),
+      cssnext({ browsers: ['last 2 versions', 'IE > 10'] }),
+      postcssReporter({ clearMessages: true }),
+    ];
+  },
 };
