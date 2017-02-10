@@ -50,7 +50,7 @@ module.exports = {
       {
         test: /\.js?$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        loader: 'babel-loader',
         query: {
           'presets': [
             'es2015',
@@ -60,15 +60,15 @@ module.exports = {
       },
       {
         test: /\.jpe?g$|\.png$|\.svg$|\.pdf$/i,
-        use: 'url-loader?limit=10000',
+        loader: 'url-loader?limit=10000',
       },
       {
         test: /\.json$/,
-        use: 'json-loader'
+        loader: 'json-loader'
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract(
+        loader: ExtractTextPlugin.extract(
           {
             fallback: 'style-loader', 
             loader: [
