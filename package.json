@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "heroku-postbuild": "webpack --config ./webpack.production.config.js --progress"
   },
-  "repository": "git@bitbucket.org:nwre87/personal-profile.git",
+  "repository": "git@github.com:NigelEarle/personal-profile.git",
   "author": "nwre87 <nigel@earle.io>",
   "license": "MIT",
   "dependencies": {
