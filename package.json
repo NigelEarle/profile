@@ -6,7 +6,7 @@
     "start": "node server.js",
     "heroku-postbuild": "webpack --config ./webpack.production.config.js --progress"
   },
-  "repository": "git@github.com:NigelEarle/personal-profile.git",
+  "repository": "git@github.com:NigelEarle/profile.git",
   "author": "nwre87 <nigel@earle.io>",
   "license": "MIT",
   "dependencies": {
