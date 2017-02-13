@@ -69,14 +69,13 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader', 
-            loader: [
-              'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
-              'postcss-loader',
-            ]
-          }
-        )
+        {
+          fallback: 'style-loader', 
+          loader: [
+            'css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+            'postcss-loader',
+          ]
+        })
       }
     ]
   }
