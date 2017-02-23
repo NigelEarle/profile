@@ -10,7 +10,7 @@
   color:#000032;
 }
 
-.container > hr {
+.line {
   border: none;
   background-color: #eee;
   height: 1.9px;
@@ -19,6 +19,18 @@
 
 .list {
   padding: 0;
+}
+
+.title {
+  font-size: 60px;
+  color: #808099;
+  margin-top: 20%;
+  text-align: center;
+}
+
+.checkBack {
+  color: #808099;
+  text-align: center;
 }
 
 @media (max-width: 740px) {
